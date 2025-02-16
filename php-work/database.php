@@ -1,9 +1,10 @@
 <?php
 
+// change these values to the correct database data
 $host = "localhost";
 $dbname = "login_db";
 $username = "root";
-$passwork = "";
+$password = "";
 
 $mysqli = new mysqli(hostname:$host,
                     username: $username,
