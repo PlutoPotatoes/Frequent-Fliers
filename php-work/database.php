@@ -1,9 +1,9 @@
 <?php
 
 // change these values to the correct database data
-$host = "localhost";
-$dbname = "login_db";
-$username = "root";
+$host = "database-1.c18souwm2mtl.us-east-2.rds.amazonaws.com";
+$dbname = "frequent_fliers";
+$username = "";
 $password = "";
 
 $mysqli = new mysqli(hostname:$host,
