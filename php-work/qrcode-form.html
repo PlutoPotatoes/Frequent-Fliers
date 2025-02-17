@@ -10,9 +10,20 @@
     
     <form method="post" action="generateQR.php">
         
-        <label for="text">Text</label>
-        <textarea id="text" name="text"></textarea>
-        <button>Generate</button>
+        <form action="process-signup.php" method="post" novalidate>
+            <div>
+                <label for="event name">Name</label>
+                <input type="text" id="event name" name = "event Name">
+            </div>
+            <div>
+                <label for="event location">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+    
+            <button>Create Event</button>
+        </form>
+
     </form>
 </body>
 </html>
