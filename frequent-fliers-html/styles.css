@@ -4,8 +4,8 @@ body {
     position: relative;
     background: #FFD6C0;
   }
-
-  .header-image {
+  
+  .img {
     width: 393px;
     height: 189px;
     left: -8px;
@@ -13,20 +13,21 @@ body {
     position: absolute;
     opacity: 0.50;
   }
-
+  
   .header-bar, .footer-bar {
     width: 393px;
     height: 79px;
     background: #FFA5A5;
     position: absolute;
   }
-
+  
   .header-bar {
     top: 0;
     height: 55px;
   }
 
-  .title {
+
+  h1 {
     width: 301px;
     top: 82px;
     left: 43px;
@@ -40,7 +41,12 @@ body {
     position: absolute;
   }
 
-  .h1 {
+  #blurb {
+    left: 47px; 
+    top: 176px;
+  }
+
+  h2 {
     text-align: center;
     color: #EC368D;
     font-size: 36px;
@@ -49,9 +55,42 @@ body {
     word-wrap: break-word;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     position: absolute;
-    width: 393px;
-    height: 42px;
-    left: 0px;
-    top: 359px;
-    position: absolute;
+    width: 393px; 
+    height: 42px; 
+  }
+
+  #about {
+    left: 0px; 
+    top: 359px; 
+  }
+
+  #what {
+    left: 0px; 
+    top: 722px;
+  }
+
+  #contact {
+    left: 0px; 
+    top: 1082px; 
+  }
+
+  p {
+    width: 335px; 
+    height: 298px; 
+    position: absolute; 
+    color: #3A3335; 
+    font-size: 16px; 
+    font-family: Forum; 
+    font-weight: 400; 
+    word-wrap: break-word"
+  }
+
+  #p1 {
+    left: 32px; 
+    top: 407px; 
+  }
+
+  #p2 {
+    left: 41px; 
+    top: 801px;
   }
