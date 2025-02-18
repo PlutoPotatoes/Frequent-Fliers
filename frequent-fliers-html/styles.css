@@ -4,7 +4,7 @@ body {
     position: relative;
     background: #FFD6C0;
   }
-  
+
   .header-image {
     width: 393px;
     height: 189px;
@@ -13,14 +13,14 @@ body {
     position: absolute;
     opacity: 0.50;
   }
-  
+
   .header-bar, .footer-bar {
     width: 393px;
     height: 79px;
     background: #FFA5A5;
     position: absolute;
   }
-  
+
   .header-bar {
     top: 0;
     height: 55px;
@@ -49,9 +49,9 @@ body {
     word-wrap: break-word;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     position: absolute;
-    width: 393px; 
-    height: 42px; 
-    left: 0px; 
-    top: 359px; 
-    position: absolute; 
+    width: 393px;
+    height: 42px;
+    left: 0px;
+    top: 359px;
+    position: absolute;
   }
