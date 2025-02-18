@@ -8,6 +8,7 @@ use Endroid\QrCode\Writer\PngWriter;
 
 // before making the QR code create the Event instance in the DB
 // use the Event ID to create the QR Code 
+// add QR code to event table in DB
 // QR code should go to a signup.php file where a global variable is set to the ID 
 // So: when the form submits it creates an attendee with the event ID set to the prepopulated field
 // link to signup.php/eventID in the QR Code
@@ -15,7 +16,6 @@ use Endroid\QrCode\Writer\PngWriter;
 // insert event into DB with $_POST details
 // get event PK
 // link to prepopulated signup with event ID
-
 
 
 //$qrCode = new QrCode($eventID);
