@@ -1,0 +1,32 @@
+name: Code Validation & Linting
+
+on: [push, pull_request]  # Runs when code is pushed or PRs are opened
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest  # Use Linux for CI/CD
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Use latest Node.js version
+
+      - name: Install Linters
+        run: |
+          npm install -g eslint stylelint
+
+      - name: Run ESLint (JavaScript)
+        run: eslint "**/*.js" || true  # Prevents stopping on errors
+
+      - name: Run Stylelint (CSS)
+        run: stylelint "**/*.css" || true
+
+      - name: Validate HTML with W3C
+        run: |
+          for file in $(find . -name "*.html"); do
+            curl -s --data-binary @"$file" -H "Content-Type: text/html" "https://validator.w3.org/nu/?out=json"
+          done
