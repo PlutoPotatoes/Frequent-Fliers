@@ -19,7 +19,7 @@ use Endroid\QrCode\Writer\PngWriter;
 
 
 //$qrCode = new QrCode($eventID);
-$qrCode = new QrCode("SMTHSMTH");
+$qrCode = new QrCode("Replace this with link to signup w/ eventID Populated");
 $writer = new PngWriter();
 
 $result = $writer->write($qrCode);
