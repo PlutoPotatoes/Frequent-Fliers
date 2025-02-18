@@ -17,9 +17,9 @@ use Endroid\QrCode\Writer\PngWriter;
 // get event PK
 // link to prepopulated signup with event ID
 
-
+$eventID = 124214324;
 //$qrCode = new QrCode($eventID);
-$qrCode = new QrCode("SMTHSMTH");
+$qrCode = new QrCode("http://localhost:8000/eventSignup.php?eventID=$eventID");
 $writer = new PngWriter();
 
 $result = $writer->write($qrCode);
