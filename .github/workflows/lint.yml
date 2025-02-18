@@ -1,10 +1,15 @@
 name: Code Validation & Linting
 
-on: [push, pull_request]  # Runs when code is pushed or PRs are opened
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:  # 👈 Allows manual triggering
 
 jobs:
   lint:
-    runs-on: ubuntu-latest  # Use Linux for CI/CD
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -13,20 +18,29 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Use latest Node.js version
+          node-version: 18
 
       - name: Install Linters
         run: |
           npm install -g eslint stylelint
 
-      - name: Run ESLint (JavaScript)
-        run: eslint "**/*.js" || true  # Prevents stopping on errors
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
 
-      - name: Run Stylelint (CSS)
-        run: stylelint "**/*.css" || true
-
-      - name: Validate HTML with W3C
+      - name: Run ESLint on changed JS files
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          for file in $(find . -name "*.html"); do
+          eslint $(git diff --name-only HEAD^ HEAD | grep '\.js$' || true)
+
+      - name: Run Stylelint on changed CSS files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          stylelint $(git diff --name-only HEAD^ HEAD | grep '\.css$' || true)
+
+      - name: Validate HTML on changed HTML files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          for file in $(git diff --name-only HEAD^ HEAD | grep '\.html$' || true); do
             curl -s --data-binary @"$file" -H "Content-Type: text/html" "https://validator.w3.org/nu/?out=json"
           done
