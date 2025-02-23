@@ -10,12 +10,10 @@
     $username = "username";
     $password = "password";
 
-
-
     // Create connection
     $conn = new mysqli($servername, $username, $password);
 
-    // Check connection
+    // Check connection, kill site on fail
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
@@ -63,8 +61,7 @@
             <clipPath id="clip0_138_297">
 
 
-            <rect width="16" height="16" fill="white" transform="translate(0.25)"/> <!--WHERE QR CODE SHOULD BE ADDED-->
-            <img class="QRCode" src = "<?php echo "$QRCode"; ?>"  alt= "Event QR Code" width="16" height="16" />
+            <img class="QRCode" src = "<?php echo "$QRCode"; ?>"  alt= "Event QR Code" width="16" height="16" /> <!--FIXME QR CODE STYLING WILL NEED ADJUSTMENT-->
 
             
             </clipPath>
