@@ -93,3 +93,5 @@
         <div style="width: 274px; height: 32px; left: 57px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Inter; font-weight: 400; word-wrap: break-word">Flier 1 Name</div>
     </div>
 </div>
+
+<!--Need Button to generate signup that links to create-bracket with "?eventID=#####" in the URL -->
