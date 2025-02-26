@@ -41,17 +41,27 @@
         $userIDs[-1] = 00000;
     }
 
-    //prepare matchup arrays and vars
+    //prepare matchup arrays for each person to email
     $matches = [];
     $n = count($userIDs);
+    $halfN = intdiv($n,2);
     foreach($userIDs as $player){
         $matches[$player] = [];
     }
 
-    for($i = 0; $i < intdiv($n,2); ++$i){
-        for($i = 0; $i < intdiv($n,2); ++$i){
-            //figure out how to number userIDs array or access in order with j and n-1-j
+    //create master schedule array
+    //each match is an array with 2 userIDs as values
+    $masterSchedule = [];
+
+    for($i = 0; $i < $halfN; ++$i){
+        for($j = 0; $j < $halfN; ++$j){
+            array_push($matches[$userID[$j]], $userIDs[$n - 1 - $j]);
+            array_push($matches[$userIDs[$n - 1 - $j]], $userID[$j]);
+            $masterSchedule[] = [$userID[$j], $userIDs[$n - 1 - $j]];
         }
+        //pops from the front, pushes that value to the end
+        array_push($userIDs, array_shift($userIDs));  
+
     }
 
 
