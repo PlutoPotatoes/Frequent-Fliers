@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 //FIXME not grabbing posted data at all
 $event = $_POST["event-name"];
 $name = $_POST["name"];
-$hostEmail = $_POST["email"];
+$email = $_POST["email"];
 
 //create event in the kiteEvent table
 $sql = "INSERT INTO kiteEvent (eventName)
@@ -66,7 +66,7 @@ $QRCode = $conn->query($sql);
 //echos the img embedding script in HTML
 echo '<img src="data:image/jpeg;base64,' . base64_encode($QRContent) . '" alt="Uploaded Image" style="max-width: 500px;">';
 
-/*
+
 //add creator as player
 $sql = "INSERT INTO attendee (playerName, email, eventID) 
 VALUES ('$name', '$email', $eventID);";
@@ -76,4 +76,3 @@ if ($conn->query($sql) === TRUE) {
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-    */
