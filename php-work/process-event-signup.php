@@ -12,6 +12,8 @@
 
     // get eventID given during signup
     $eventID = $_POST["eventID"];
+    $email = $_POST["email"];
+    $name = $_POST["name"];
 
     //server connection details
     //should probably be more secure with the password or make read only account
@@ -27,11 +29,21 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
+    // Insert form data into attendees
+    // use autoincrement for unique attendee ID
+    $attendeeQuery = "INSERT INTO attendees (eventID, email, playerName) VALUES ($eventID, $email, $name)";
+    
+    if($conn->query($attendeeQuery) !== true){
+        die("Connection Error: " . $conn->error);
+    }
+
+
+
+
     // Query connection, place the selected row in $row
     $qrQuery = "SELECT eventName, QRCode, eventTime, eventLocation from events where events.eventID= $eventID";
     $results = $conn->query($qrQuery);
     $row = $results->fetch_assoc();
-
     // Get column values from $row
     // once connected and entries exists replace text in the site with references to these variables
     $eventName = $row["eventName"];
