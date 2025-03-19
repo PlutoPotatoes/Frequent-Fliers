@@ -17,40 +17,28 @@
 
     //server connection details
     //should probably be more secure with the password or make read only account
-    $servername = "localhost";
-    $username = "username";
-    $password = "password";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-
-    // Check connection, kill site on fail
+    $host = 'sql.cianci.io';
+    $dbname = 'frequentfliers';
+    $username = 'rmorrell';
+    $password = 'e2VaSdfES6sU';
+    
+    $conn = new mysqli($host, $username, $password, $dbname);
+    
     if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error);
     }
 
     // Insert form data into attendees
     // use autoincrement for unique attendee ID
-    $attendeeQuery = "INSERT INTO attendees (eventID, email, playerName) VALUES ($eventID, $email, $name)";
-    
-    if($conn->query($attendeeQuery) !== true){
-        die("Connection Error: " . $conn->error);
+    $sql = "INSERT INTO attendee (playerName, email, eventID) 
+    VALUES ('$name', '$email', $eventID);";
+
+    if ($conn->query($sql) === TRUE) {
+        header("http://localhost:8000/signup-success.html");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-
-
-
-    // Query connection, place the selected row in $row
-    $qrQuery = "SELECT eventName, QRCode, eventTime, eventLocation from events where events.eventID= $eventID";
-    $results = $conn->query($qrQuery);
-    $row = $results->fetch_assoc();
-    // Get column values from $row
-    // once connected and entries exists replace text in the site with references to these variables
-    $eventName = $row["eventName"];
-    $eventTime = $row["eventTime"];
-    $eventLocation = $row["eventLocation"];
-    // add a place in the DB for a small blurb (250 words max)
-    $QRCode = $row["QRCode"];
     
 ?>
 <body> 

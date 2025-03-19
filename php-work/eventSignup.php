@@ -13,15 +13,15 @@
     
 
         
-    <form action="process-signup.php" method="post" novalidate>
+    <form action="process-event-signup.php" method="post" novalidate>
         <div>
 
             <label for="eventID">Event ID</label>
-            <input type="text" id="eventID" name = "eventID" <?php echo "value = $eventID";?> <?php if($eventID != ""){echo "disabled";} ?>>
+            <input type="text" id="eventID" name = "eventID" <?php echo "value =$eventID";?> <?php if($eventID != ""){echo "readonly";} ?>>
         </div>
         <div>
             <label for="name">Player Name</label>
-            <input type="name" id="name" name="name">
+            <input type="text" id="name" name="name">
         </div>
         <div>
             <label for="email">Email</label>
