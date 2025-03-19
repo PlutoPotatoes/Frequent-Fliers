@@ -71,7 +71,7 @@ $sql = "INSERT INTO attendee (playerName, email, eventID)
 VALUES ('$name', '$email', $eventID);";
 
 if ($conn->query($sql) === TRUE) {
-    header("http://localhost:8000/signup-success.html");
+    header("Location: http://localhost:8000/signup-success.html");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
