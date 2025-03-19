@@ -20,7 +20,6 @@ if ($conn->connect_error) {
 }
 
 //grab data from the form
-//FIXME not grabbing posted data at all
 $event = $_POST["event-name"];
 $name = $_POST["name"];
 $email = $_POST["email"];
