@@ -58,7 +58,10 @@
     //add rest round if needed
     $userIDs = array_keys($attendees);
     if(count($userIDs)%2 == 1){
-        $userIDs[-1] = 00000;
+        $sql = "INSERT INTO attendee (playerName, email, eventID) values ('Rest Round', '---', $eventID );";
+        $conn->query($sql);
+        $lastID = $conn->insert_id;
+        $userIDs[-1] = $lastID;
     }
 
     $sql = "DELETE FROM eventMatch WHERE eventID = 19;";
