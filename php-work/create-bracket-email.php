@@ -27,7 +27,7 @@
 
     //FIXME uncomment when ready to use with actual events, will grab eventID from the url
     //$eventID = $_GET["eventID"];
-    $eventID = 19;
+    $eventID = 17;
 
     //server connection details
     $host = 'sql.cianci.io';
@@ -55,7 +55,7 @@
         );
     }
 
-    //add rest round if needed
+    //add rest round to database and $userIDs if needed
     $userIDs = array_keys($attendees);
     if(count($userIDs)%2 == 1){
         $sql = "INSERT INTO attendee (playerName, email, eventID) values ('Rest Round', '---', $eventID );";
@@ -64,7 +64,7 @@
         $userIDs[-1] = $lastID;
     }
 
-    $sql = "DELETE FROM eventMatch WHERE eventID = 19;";
+    $sql = "DELETE FROM eventMatch WHERE eventID = $eventID;";
     $conn->query($sql);
     //create master schedule array
     //each match is an array with 2 userIDs as values
@@ -133,17 +133,15 @@
         $emailStr = $emailStr .'</tr>';
     }
     $emailStr = $emailStr . "</table>";
-
-
-    $email = "rmorrell@oxy.edu";
-    $name = "Ryan";
-    //change email address
     $mail->isHTML(true);
-    $mail->addAddress($email, $name);
-    //set subject line
     $mail->Subject = "Schedule";
-    //add email contents
     $mail->Body = $emailStr;
+
+    foreach($attendees as $a){
+        $email = $a["email"];
+        $name = $a["name"];
+        $mail->addAddress($email, $name);
+    }
 
     $mail->send();
     echo "Mail sent";
