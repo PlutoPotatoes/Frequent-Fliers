@@ -12,7 +12,11 @@
     <img class="img" src="https://t3.ftcdn.net/jpg/02/67/83/92/360_F_267839295_jVbzpVskpRpnPaq3xLFjjX9gYjNRocxN.jpg"/> <!--added img, FIXME need to fix size-->
     <h1>Los Angeles<br/>Kite Fighting</h1>
 
-    <form>
+    <form action="create-event.php" method="post">
+        <div>
+            <label for="event-name">Event Name</label>
+            <input type="text" id="event-name">
+        </div>
         <div>
             <label for="name">Flier Name</label>
             <input type="text" id="name">
@@ -36,7 +40,7 @@
         <br>
         <div>
             <label for="email">Confirmation Email:</label>
-            <input type="text" id="email" placeholder="johndoe@gmail.com">
+            <input type="email" id="email" placeholder="johndoe@gmail.com">
         </div>
 
         <div>
