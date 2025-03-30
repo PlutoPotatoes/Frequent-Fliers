@@ -119,3 +119,7 @@ input {
     border: 1px solid #EC368D;
     border-radius: 4px;
 }
+
+th, td {
+  padding: 10px;
+}

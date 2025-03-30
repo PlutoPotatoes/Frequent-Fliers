@@ -20,6 +20,7 @@ $sql = "SELECT img FROM QRCode where eventID = $eventID";
 $result = $conn->query($sql);
 $img = mysqli_fetch_column($result);
 
+
 echo $img;
 
 exit;

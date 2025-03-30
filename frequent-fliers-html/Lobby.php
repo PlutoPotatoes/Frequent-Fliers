@@ -3,7 +3,39 @@
     <!--FIXME at some point change sizing for viewport <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet" href="styles.css">
 </head> <!--FIXME - add metadata?-->
-<div style="width: 393px; height: 849px; position: relative; background: #FFD6C0">
+<?php
+    //needs to be called as Lobby.php?eventID=###
+    $eventID = $_GET["eventID"];
+
+    //server connection details
+    $host = 'sql.cianci.io';
+    $dbname = 'frequentfliers';
+    $username = 'rmorrell';
+    $password = 'e2VaSdfES6sU';
+
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT img FROM QRCode where eventID = $eventID";
+    $result = $conn->query($sql);
+    $img = mysqli_fetch_column($result);
+
+    $sql = "SELECT eventName FROM kiteEvent where eventID = $eventID;";
+    $result = $conn->query($sql);
+    $eventName = mysqli_fetch_column($result);
+
+    $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID;";
+    $result = $conn->query($sql);
+    $tableSize = $result->num_rows;
+    $tableSize = ($tableSize+1)*45;
+
+
+?>
+
+<div style="width: 393px; height: 859px; position: relative; background: #FFD6C0">
 <img class="img" src="https://t3.ftcdn.net/jpg/02/67/83/92/360_F_267839295_jVbzpVskpRpnPaq3xLFjjX9gYjNRocxN.jpg"/> <!--added img, FIXME need to fix size-->
     <div style="width: 301px; height: 108px; left: 43px; top: 95px; position: absolute; text-align: center; color: #EC368D; font-size: 36px; font-family: Faster One; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Los Angeles Kite Fighting</div>
     <div style="width: 393px; height: 55px; left: 0px; top: 0px; position: absolute; background: #FFA5A5"></div>
@@ -26,6 +58,7 @@
             <defs>
             <clipPath id="clip0_138_297">
             <rect width="16" height="16" fill="white" transform="translate(0.25)"/> <!--WHERE QR CODE SHOULD BE ADDED-->
+
             </clipPath>
             </defs>
             </svg>
@@ -42,16 +75,32 @@
         </div>
     </div>
     <div style="width: 316px; height: 75px; left: 39px; top: 419px; position: absolute; background: #FFA5A5; border: 1px #EC368D solid"></div>
-    <div style="width: 315px; height: 74px; left: 40px; top: 420px; position: absolute; text-align: center; color: #EC368D; font-size: 40px; font-family: Inter; font-weight: 400; line-height: 52px; word-wrap: break-word">PIN: 1234567</div>
-    <div style="width: 301px; height: 90px; left: 42px; top: 318px; position: absolute; text-align: center; color: #EC368D; font-size: 36px; font-family: Inter; font-weight: 700; word-wrap: break-word">Griffith Park<br/>Tournament</div>
-    <div style="width: 150px; height: 150px; left: 122px; top: 534px; position: absolute; background: white; border: 5px black solid"></div>
-    <div style="width: 331px; height: 45.01px; left: 19px; top: 711px; position: absolute">
-        <div style="width: 276px; height: 0px; left: 55px; top: 44px; position: absolute; border: 3px #EC368D solid"></div>
-        <div style="width: 40px; height: 40px; left: 0px; top: 4px; position: absolute">
-            <div style="width: 40px; height: 40px; left: 0px; top: 0px; position: absolute; background: #FFA5A5; border-radius: 9999px"></div>
-            <div style="width: 22.67px; height: 0px; left: 28px; top: 12px; position: absolute; transform: rotate(139deg); transform-origin: top left; border: 1px #EC368D solid"></div>
-            <div style="width: 22.67px; height: 0px; left: 11px; top: 13px; position: absolute; transform: rotate(41deg); transform-origin: top left; border: 1px #EC368D solid"></div>
-        </div>
-        <div style="width: 274px; height: 32px; left: 57px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Inter; font-weight: 400; word-wrap: break-word">Flier 1 Name</div>
+    <div style="width: 315px; height: 74px; left: 40px; top: 420px; position: absolute; text-align: center; color: #EC368D; font-size: 40px; font-family: Inter; font-weight: 400; line-height: 52px; word-wrap: break-word">PIN: <?php echo $eventID;?></div>
+    <div style="width: 301px; height: 90px; left: 42px; top: 318px; position: absolute; text-align: center; color: #EC368D; font-size: 36px; font-family: Inter; font-weight: 700; word-wrap: break-word"><?php echo $eventName ?></div>
+    <div style="width: 150px; height: 150px; left: 122px; top: 534px; position: absolute; background: white; border: 5px black solid">
+    <?php
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($img) . '" alt="Event QR Code" style="max-width: 150px;">';
+    ?>
+    </div>
+
+    <!--Player Table-->
+    <?php
+
+
+    $table = "<div style=\"width: 301px; height: $tableSize; left: 42px; top: 800px; position:absolute; border:1px solid black; background:#FFA5A5; font-size: 36px; font-family: Inter; \">";
+    $table = $table . "<table><thead><tr><th scope=\"col\" ></th><th scope=\"col\">Flier Name</th></tr></thead>";
+
+    while ($row = $result->fetch_assoc()) {
+    $table = $table . "<tr><td><button >X</button></td>"; //replace X with an image for the button
+    $table = $table . "<td>$row[playerName]</td></tr>";
+    }
+    echo $table;
+    ?>
+
+    <div style="height: 15px">
+    <!-- add social media stuff here? -->
+    </div>
+
+        </table>
     </div>
 </div>
