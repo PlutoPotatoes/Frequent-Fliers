@@ -25,7 +25,7 @@
     $mail->Password = "rrdp jbdy ttea dibq";
     $mail->setFrom("kitefightla@gmail.com", "Kite Fight LA");
 
-    //FIXME uncomment when ready to use with actual events, will grab eventID from the url
+    //FIXME uncomment when ready to use with actual events, will grab eventID from the url (www.kitefightLA/something.com?eventID=##)
     //$eventID = $_GET["eventID"];
     $eventID = 17;
 

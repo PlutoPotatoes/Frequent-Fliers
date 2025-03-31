@@ -27,7 +27,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
+    echo "yada $email yada";
     // Insert form data into attendees
     // use autoincrement for unique attendee ID
     $sql = "INSERT INTO attendee (playerName, email, eventID) 

@@ -45,7 +45,8 @@
     $getAttendees = "SELECT * FROM attendee WHERE eventID = $eventID;";
     $result = $conn->query($getAttendees);  
     
-    //convert query to array
+    //convert query to array and store emails and names
+    // $attendees[userID] = ['email' = email, 'name' = name]
     $attendees = [];
     while($row = $result->fetch_assoc()){
         $attendees[$row["userID"]] = array(
@@ -86,7 +87,6 @@
             $matchNo+=1;
         }
         //pops from the front, pushes that value to the end
-        //array_push($userIDs, array_shift($userIDs));  
         array_splice( $userIDs, 1, 0, array_pop($userIDs)); 
 
 
@@ -95,6 +95,7 @@
 
     $sql = "SELECT matchNo, player1, player2, attackSide from eventMatch where eventID=$eventID order by matchNo;";
     $result = $conn->query($sql);
+   
 
     //display table  
 
