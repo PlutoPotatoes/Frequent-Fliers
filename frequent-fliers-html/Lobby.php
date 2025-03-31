@@ -85,14 +85,13 @@
 
     <!--Player Table-->
     <?php
-
-
     $table = "<div style=\"width: 301px; height: $tableSize; left: 42px; top: 800px; position:absolute; border:1px solid black; background:#FFA5A5; font-size: 36px; font-family: Inter; \">";
     $table = $table . "<table><thead><tr><th scope=\"col\" ></th><th scope=\"col\">Flier Name</th></tr></thead>";
 
     while ($row = $result->fetch_assoc()) {
-    $table = $table . "<tr><td><button >X</button></td>"; //replace X with an image for the button
-    $table = $table . "<td>$row[playerName]</td></tr>";
+        $name = $row["playerName"];
+    $table = $table . "<tr><td><button>X</button></td>"; //replace X with an image for the button
+    $table = $table . "<td>$name</td></tr>";
     }
     echo $table;
     ?>
