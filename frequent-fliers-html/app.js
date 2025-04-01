@@ -9,9 +9,41 @@ accordionTitles.forEach((accordionTitle) => {
     accordionTitle.classList.toggle("active-header");
     if(accordionTitle.classList.contains("active-header")){
       accordionTitle.nextElementSibling.style.maxHeight = `${height}px`;
+
     }else{
-      accordionTitle.nextElementSibling.style.maxHeight = "0px";      
+      accordionTitle.nextElementSibling.style.maxHeight = "0px";    
+  
     }
   });
 });
+
+
+
+
+const incrementButtons = document.querySelectorAll(".increment-button");
+
+incrementButtons.forEach((button) => {
+  button.addEventListener("click", () =>{
+    const scoreID = button.id + "Score";
+    document.getElementById(scoreID).readOnly = false;
+    const val = Math.max(parseInt(document.getElementById(scoreID).valueAsNumber, 10) + 1, 0 );
+    //val = val+1;
+    document.getElementById(scoreID).value = `${val}`;
+    document.getElementById(scoreID).readOnly = true;
+
+  });
+});
   
+const decrementButtons = document.querySelectorAll(".decrement-button");
+
+decrementButtons.forEach((button) => {
+  button.addEventListener("click", () =>{
+    const scoreID = button.id + "Score";
+    document.getElementById(scoreID).readOnly = false;
+    const val = Math.max(parseInt(document.getElementById(scoreID).valueAsNumber, 10) - 1, 0 );
+    //val = val+1;
+    document.getElementById(scoreID).value = `${val}`;
+    document.getElementById(scoreID).readOnly = true;
+
+  });
+});
