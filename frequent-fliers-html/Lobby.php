@@ -19,6 +19,8 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
+    // below is the code to get the QR code image from the database
+    
     $sql = "SELECT img FROM QRCode where eventID = $eventID";
     $result = $conn->query($sql);
     $img = mysqli_fetch_column($result);
