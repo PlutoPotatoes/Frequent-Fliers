@@ -15,3 +15,4 @@ accordionTitles.forEach((accordionTitle) => {
   });
 });
   
+// testing if this is working properly... 
