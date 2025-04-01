@@ -7,23 +7,16 @@
     <link rel="stylesheet" href="game-running.css">
 </header>
 
-<?php
-
-?>
 
 <body>
     <p>Accordion Test</p>
-
-    <button class="accordion">Match 1</button>
-    <div class="panel">
-        <p>Content</p>
-    </div>
-
-    <button class="accordion">Match 2</button>
-    <div class="panel">
-        <p>Content</p>
-    </div>
-
+        <div class="accordion">
+            <?php
+            $accordionBody = "<div class=\"accordion-item\"><h2 class=\"accordion-title\"> Match 1</h2>";
+            $accordionBody = $accordionBody. "<p class=\"match-menu\">pluhpluhlpuhkdfsjdaskl;fjdkls</p></div>";
+            echo $accordionBody;
+            ?>
+        </div>
     <script src="app.js"></script>
 </body>
 </html>
