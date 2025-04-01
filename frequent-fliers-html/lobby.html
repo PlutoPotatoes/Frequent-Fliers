@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Table Only</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <div id="tableHolder"></div>
+
+  <script>
+    $(document).ready(function(){
+      $('#tableHolder').load('getTable.php?eventID=19');
+      setInterval(function(){
+        $('#tableHolder').load('getTable.php?eventID=19');
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>

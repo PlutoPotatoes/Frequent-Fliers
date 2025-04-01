@@ -12,15 +12,20 @@ body{
     background-color:#FFD6C0;
     padding: 20px;
     margin: 0 auto;
+    width: 90%;
     max-width: 1200px;
-  
+    border: 4px #8f2156;
+    border-radius: 5px;
+
   }
 
   .accordion-item{
+
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     background-color: #FFD6C0;
+
   }
   
   .accordion-title{
@@ -43,4 +48,87 @@ body{
     max-height: 0;
     overflow: hidden;
     transition: 1000ms ease max-height;
+
   }
+
+  .player-label{
+    text-align:center;
+    padding: 5px;
+  }
+
+  .score{
+    width: 50px;
+    text-align: center;
+    border: 1px solid #EC368D;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 50px;
+    min-width: 50px;
+    max-height: 50px;
+    max-width: 50px;
+    font-size: large;
+  }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.increment-button,
+.decrement-button {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #EC368D;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  min-height: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  max-width: 50px;
+  font-size: large;
+}
+
+.increment-button:hover,
+.decrement-button:hover {
+  background-color: #8f2156;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.increment-button:active,
+.decrement-button:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.increment-button:hover,
+.decrement-button:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
