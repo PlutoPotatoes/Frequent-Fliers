@@ -2,7 +2,7 @@
 <html>
 <header>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Los Angeles Kite Fighting</title>
     <link rel="stylesheet" href="game-running.css">
 </header>
@@ -22,13 +22,34 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$sql = "SELECT eventName FROM kiteEvent WHERE eventID=$eventID;";
+$event = $conn->query($sql);
+$eventName = $event->fetch_assoc()["eventName"];
+
 $sql = "SELECT * FROM eventMatch WHERE eventID=$eventID;";
 $matches = $conn->query($sql);
 
 ?>
 
 <body>
-    <p>Accordion Test</p>
+
+    <div class="top-menu">
+        <button class="logo-button">LAKF</button>
+    </div>
+    <div class="banner-container">
+        <img class="banner" src="cloudBanner.jpg" />
+    </div>
+    <div class="nav-banner">
+        <button class="home-button" >HOME</button>
+        <button class="home-button" >HOME</button>
+    </div>
+
+    <div>
+        <p class="title"><?php echo $eventName ?></p>
+        <p class="instructions">Enter scores for each match below and press submit</p>
+    </div>
+
+
     <form method = "post" action = "">
         <div class="accordion" name="match-list">
             <?php
@@ -45,13 +66,13 @@ $matches = $conn->query($sql);
                                 <h2 class=\"accordion-title\"> Match $matchNo</h2>
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
-                    $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . " Score</label>
+                    $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
                     <input class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = \"0\" readonly/>
                     <input id = \"M" . $matchNo . "P1\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P1\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>";
 
-                    $accordion = $accordion . "<div class=\"player-label\"><label class=\"p2Label\" for = \"M" . $matchNo . "P2Score\">". $p2 . " Score</label>
+                    $accordion = $accordion . "<div class=\"player-label\"><label class=\"p2Label\" for = \"M" . $matchNo . "P2Score\">". $p2 . "'s Score</label>
                     <input class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = \"0\" readonly/>
                     <input id = \"M" . $matchNo . "P2\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P2\" class= \"decrement-button\" type=\"button\" value=\"-\" />
@@ -63,11 +84,12 @@ $matches = $conn->query($sql);
 
                 }
             ?>
-
-
+            <div class="submit-wrapper">
+                <input class="submit-button" type="submit" value="Finish Tournament">
+            </div>
         </div><br>
 
-
+        
     </form>
     <script src="app.js"></script>
 </body>

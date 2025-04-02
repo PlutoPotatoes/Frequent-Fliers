@@ -9,10 +9,10 @@ body{
 }
 
 .accordion{
-    background-color:#FFD6C0;
+    background-color:#ffc7a7;
     padding: 20px;
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
     max-width: 1200px;
     border: 4px #8f2156;
     border-radius: 5px;
@@ -23,7 +23,7 @@ body{
 
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     background-color: #FFD6C0;
 
   }
@@ -57,13 +57,12 @@ body{
   }
 
   .score{
-    width: 50px;
     text-align: center;
     border: 1px solid #EC368D;
     padding: 10px;
     border-radius: 5px;
-    min-height: 50px;
-    min-width: 50px;
+    min-height: 10px;
+    min-width: 10px;
     max-height: 50px;
     max-width: 50px;
     font-size: large;
@@ -78,7 +77,7 @@ input::-webkit-inner-spin-button {
 
 
 .increment-button,
-.decrement-button {
+.decrement-button{
   appearance: none;
   backface-visibility: hidden;
   background-color: #EC368D;
@@ -106,29 +105,188 @@ input::-webkit-inner-spin-button {
   touch-action: manipulation;
   vertical-align: top;
   white-space: nowrap;
-  min-height: 50px;
-  min-width: 50px;
+  min-height: 15px;
+  min-width: 15px;
   max-height: 50px;
   max-width: 50px;
   font-size: large;
+  align-self: right;
 }
 
 .increment-button:hover,
-.decrement-button:hover {
+.decrement-button:hover{
   background-color: #8f2156;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 
 .increment-button:active,
-.decrement-button:active {
+.decrement-button:active{
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
-.increment-button:hover,
-.decrement-button:hover {
+
+.home-button {
+  align-self: center;
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #78c0e0;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: center;
+  white-space: nowrap;
+  min-height: 15px;
+  min-width: 30px;
+  max-height: 50px;
+  max-width: 200px;
+  font-size: large;
+  margin: 3px;
+}
+
+.home-button:hover {
+  background-color: #619db7;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 
+
+.home-button:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.banner-container{
+  text-align: center;
+}
+
+.banner{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.nav-banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b82b6f;
+  width: 100%;
+  height: 30%;
+}
+
+.top-menu{
+  width: 100%;
+  height: 400%;
+  background-color: #b82b6f;
+}
+
+.name-overlay{
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #b82b6f; 
+  padding: 10px 20px; 
+  font-size: 20px; 
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+  margin: 15px;
+  font-size: large;
+  font-weight: 800;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.submit-button {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #78c0e0;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: center;
+  white-space: nowrap;
+  min-height: 15px;
+  min-width: 30px;
+  max-height: 50px;
+  max-width: 200px;
+  font-size: large;
+  margin: 3px;
+}
+
+.submit-button:hover {
+  background-color: #619db7;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+
+.submit-button:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.submit-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.instructions{
+  text-align: center;
+  margin: 15px;
+
+}
+
+.logo-button{
+  margin:10px;
+}
