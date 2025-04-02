@@ -50,7 +50,7 @@ $matches = $conn->query($sql);
     </div>
 
 
-    <form method = "post" action = "">
+    <form method = "post" action = <?php echo "tally-scores.php?eventID=$eventID"; ?>>
         <div class="accordion" name="match-list">
             <?php
                 while($match = $matches->fetch_assoc()){
@@ -67,13 +67,13 @@ $matches = $conn->query($sql);
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
                     $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
-                    <input class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = \"0\" readonly/>
+                    <input name=\"M" . $matchNo . "P1Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = \"0\" readonly/>
                     <input id = \"M" . $matchNo . "P1\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P1\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>";
 
                     $accordion = $accordion . "<div class=\"player-label\"><label class=\"p2Label\" for = \"M" . $matchNo . "P2Score\">". $p2 . "'s Score</label>
-                    <input class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = \"0\" readonly/>
+                    <input name=\"M" . $matchNo . "P2Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = \"0\" readonly/>
                     <input id = \"M" . $matchNo . "P2\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P2\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>
@@ -84,6 +84,7 @@ $matches = $conn->query($sql);
 
                 }
             ?>
+            
             <div class="submit-wrapper">
                 <input class="submit-button" type="submit" value="Finish Tournament">
             </div>
