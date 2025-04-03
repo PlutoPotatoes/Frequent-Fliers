@@ -78,6 +78,8 @@
             </script>  
     </div>
 
+    <?php echo "<a href=\"create-bracket-email.php?eventID=$eventID\">Start Tournament</a>"?>
+
     
     <div style="height: 15px">
     <!-- add social media stuff here? -->
