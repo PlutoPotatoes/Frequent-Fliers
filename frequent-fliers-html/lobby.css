@@ -1,0 +1,172 @@
+body{
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    background: #FFD6C0;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.qrcontainer{
+    width: 150px;
+    height: 150px;  
+    position: absolute; 
+    background: white; 
+    border: 5px black solid;
+    text-align: center;
+  }
+  
+  
+.qrcode{
+    object-fit:cover; 
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    opacity: 1;
+}
+
+.title{
+    width: 80%; 
+    height: 108px; 
+    left: 43px; 
+    top: 95px; 
+    position: absolute; 
+    text-align: center; 
+    color: #EC368D; 
+    font-size: 36px; 
+    font-family: Faster One; 
+    font-weight: 400; 
+    word-wrap: break-word; 
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.top-menu{
+    width: 100%;
+    height: 55px;
+    background-color: #FFA5A5;
+  }
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFA5A5;
+    width: 100%;
+    height: 70px;
+
+}
+
+.logo-button{
+    height: 90%;
+    background-color: transparent;
+    border:transparent;
+    padding: 10px;
+}
+
+.banner-container{
+    text-align: center;
+    margin:0px;
+    width: 100%;
+    height:20%;
+  }
+  
+.banner{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin:0px;
+}
+
+.home-button {
+    align-self: center;
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #78c0e0;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: center;
+    white-space: nowrap;
+    min-height: 15px;
+    min-width: 30px;
+    max-height: 50px;
+    max-width: 200px;
+    font-size: large;
+    margin: 3px;
+  }
+  
+  .home-button:hover {
+    background-color: #619db7;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+  }
+  
+  
+  .home-button:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }
+
+  .event-title{
+    color: #EC368D; 
+    font-size: 36px; 
+    font-family: Inter; 
+    font-weight: 700; 
+    word-wrap:break-word;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .pin-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 20%;
+    height: 300px;
+    padding:10px;
+    background: #FFA5A5; 
+    border: 1px #EC368D solid;
+    padding: 15px;
+
+  }
+
+  .pin{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50;
+    font-weight: 100;
+    padding-top: 30px;
+    color: #821f4f;
+  }
+
+  .event-title-box{
+    margin: auto;
+    width: 50%;
+    padding:10px;
+  }
+
+  .instruction{
+    text-align: center;
+  }
