@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Query the player names for the table
-$sql = "SELECT playerName FROM attendee WHERE eventID = $eventID;";
+$sql = "SELECT playerName, userID FROM attendee WHERE eventID = $eventID;";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -24,12 +24,13 @@ if (!$result) {
 $tableSize = ($result->num_rows + 1) * 45;
 
 // Build the HTML table
-echo "<div style=\"width: 301px; height: {$tableSize}px; border:1px solid black; background:#FFA5A5; font-size: 36px; font-family: Inter;\">";
-echo "<table><thead><tr><th></th><th>Flier Name</th></tr></thead><tbody>";
+echo "<div class=\"lobby-table\"><table><thead><tr><th></th><th>Flier Name</th></tr></thead><tbody>";
 
 while ($row = $result->fetch_assoc()) {
-    $name = htmlspecialchars($row["playerName"]);
-    echo "<tr><td><button>X</button></td><td>$name</td></tr>";
+    $name = $row["playerName"];
+    $userID= $row["userID"];
+
+    echo "<tr><td><button class=\"deleteButton\" id=\"$userID\">X</button></td><td class=\"flier-name\">$name</td></tr>";
 }
 
 echo "</tbody></table></div>";

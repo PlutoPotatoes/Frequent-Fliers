@@ -3,7 +3,7 @@
     <!--FIXME at some point change sizing for viewport <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="lobby.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head> <!--FIXME - add metadata?-->
 <?php
@@ -62,27 +62,25 @@
         <br>
         <div class="pin">PIN: <?php echo $eventID;?></div>
         </div>
-
     </div>
-
-
+    <div class=table-spacer></div>
         <!--Player Table-->
-        <div id="tableHolder"></div>
+    <div id="table-holder">
+        
+
             <script>
             $(document).ready(function(){
-            $('#tableHolder').load('getTable.php?eventID=19');
+            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
             setInterval(function(){
-                $('#tableHolder').load('getTable.php?eventID=19');
+                $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
             }, 5000);
             });
-            </script>
-        </div>
+            </script>  
+    </div>
 
-        <div style="height: 15px">
-        <!-- add social media stuff here? -->
-        </div>
-
-            </table>
-        </div>
+    
+    <div style="height: 15px">
+    <!-- add social media stuff here? -->
+    </div>
 
 </body>

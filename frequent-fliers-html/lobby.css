@@ -146,6 +146,7 @@ body{
     margin: auto;
     width: 20%;
     height: 300px;
+    min-width: 175px;
     padding:10px;
     background: #FFA5A5; 
     border: 1px #EC368D solid;
@@ -169,4 +170,28 @@ body{
 
   .instruction{
     text-align: center;
+  }
+
+  .table-spacer{
+    width:100%;
+    height:40px;
+  }
+
+  .table-holder{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin:auto;
+  }
+
+  .lobby-table{
+    width: fit-content;
+    min-width: 175px;
+    height: fit-content;
+    background-color: #FFA5A5;
+    align-items: center;
+    margin: auto;
+  }
+  .flier-name{
+    margin:auto;
   }
