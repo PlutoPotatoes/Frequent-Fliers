@@ -57,6 +57,9 @@ $matches = $conn->query($sql);
                     $matchNo = $match["matchNo"];
                     $p1 = $match["player1"];
                     $p2 = $match["player2"];
+                    $p1Score = $match["player1Score"];
+                    $p2Score = $match["player2Score"];
+
                     $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID AND userID IN ($p1, $p2);";
                     $players = $conn->query($sql);
                     $p1 = $players->fetch_assoc()["playerName"];
@@ -89,13 +92,13 @@ $matches = $conn->query($sql);
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
                     $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
-                    <input name=\"M" . $matchNo . "P1Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = 0 readonly/>
+                    <input name=\"M" . $matchNo . "P1Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = $p1Score readonly/>
                     <input id = \"M" . $matchNo . "P1\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P1\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>";
 
                     $accordion = $accordion . "<div class=\"player-label\"><label class=\"p2Label\" for = \"M" . $matchNo . "P2Score\">". $p2 . "'s Score</label>
-                    <input name=\"M" . $matchNo . "P2Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = 0 readonly/>
+                    <input name=\"M" . $matchNo . "P2Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = $p2Score readonly/>
                     <input id = \"M" . $matchNo . "P2\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P2\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>

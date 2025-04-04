@@ -79,5 +79,17 @@ decrementButtons.forEach((button) => {
     document.getElementById(scoreID).value = `${val}`;
     document.getElementById(scoreID).readOnly = true;
 
+    const php = "updateDB.php?eventID=" + eventID + "&matchID=" + scoreID.substring(1,2)  + "&player="+ scoreID.substring(3,4) + "&score=" + val;
+    console.log(php);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+       // MANAGE THE RESPONSE
+       var response = this.responseText;
+      }
+    }
+    xmlhttp.open("POST", php, true);
+    xmlhttp.send();
+
   });
 });
