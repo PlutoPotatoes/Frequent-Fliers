@@ -51,7 +51,7 @@ $matches = $conn->query($sql);
 
 
     <form method = "post" action = <?php echo "tally-scores.php?eventID=$eventID"; ?>>
-        <div class="accordion" name="match-list">
+        <div class="accordion" name="match-list" id=<?php echo $eventID?>>
             <?php
                 while($match = $matches->fetch_assoc()){
                     $matchNo = $match["matchNo"];
@@ -114,6 +114,6 @@ $matches = $conn->query($sql);
 
         
     </form>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
