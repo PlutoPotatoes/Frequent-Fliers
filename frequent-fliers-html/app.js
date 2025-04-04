@@ -5,9 +5,25 @@ const accordionTitles = document.querySelectorAll(".accordion-title");
 //add event listener to each accordionTitle on the site
 accordionTitles.forEach((accordionTitle) => {
   accordionTitle.addEventListener("click", () => {
+    const P1Score = parseInt(document.getElementById(accordionTitle.id + "P1Score").value, 10);
+    const P2Score = parseInt(document.getElementById(accordionTitle.id + "P2Score").value, 10);
+
 
     accordionTitles.forEach((close) =>{
-      close.nextElementSibling.style.maxHeight = "0px";    
+      if(close.classList.contains("active-header"))
+      {
+        close.readOnly=false;
+        if(P1Score != 0 || P2Score != 0){
+          console.log("P1: " + P1Score + " P2: " + P2Score);
+        }
+        close.readOnly=true;
+        if(close != accordionTitle){
+          close.nextElementSibling.style.maxHeight = "0px";   
+          close.classList.toggle("active-header");
+        }
+      } 
+
+
     });
 
     const height = accordionTitle.nextElementSibling.scrollHeight;

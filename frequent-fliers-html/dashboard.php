@@ -46,7 +46,7 @@ $matches = $conn->query($sql);
 
     <div>
         <p class="title"><?php echo $eventName ?></p>
-        <p class="instructions">Enter scores for each match below and press submit</p>
+        <p class="instructions">Enter scores for each match below. Good Luck!</p>
     </div>
 
 
@@ -61,19 +61,41 @@ $matches = $conn->query($sql);
                     $players = $conn->query($sql);
                     $p1 = $players->fetch_assoc()["playerName"];
                     $p2 = $players->fetch_assoc()["playerName"];
-
-                    $accordion = "<div class=\"accordion-item\">
+                    if($p1=="Rest Round"){
+                        $accordion = "<div class=\"accordion-item\">
                                 <h2 class=\"accordion-title\"> Match $matchNo</h2>
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
+                        $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p2 . "'s Rest Round</label>
+                        </div>
+                        </div>
+                        </div>";
+                        echo $accordion;
+                        continue;
+                    }elseif($p2=="Rest Round"){
+                        $accordion = "<div class=\"accordion-item\">
+                                <h2 class=\"accordion-title\"> Match $matchNo</h2>
+                                <div class=\"match-menu\">
+                                <div class=\"player-label\">";
+                        $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Rest Round</label>
+                        </div>
+                        </div>
+                        </div>";
+                        echo $accordion;
+                        continue;
+                    }
+                    $accordion = "<div class=\"accordion-item\">
+                                <h2 class=\"accordion-title\" id=\"M$matchNo\"> Match $matchNo</h2>
+                                <div class=\"match-menu\">
+                                <div class=\"player-label\">";
                     $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
-                    <input name=\"M" . $matchNo . "P1Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = \"0\" readonly/>
+                    <input name=\"M" . $matchNo . "P1Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = 0 readonly/>
                     <input id = \"M" . $matchNo . "P1\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P1\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>";
 
                     $accordion = $accordion . "<div class=\"player-label\"><label class=\"p2Label\" for = \"M" . $matchNo . "P2Score\">". $p2 . "'s Score</label>
-                    <input name=\"M" . $matchNo . "P2Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = \"0\" readonly/>
+                    <input name=\"M" . $matchNo . "P2Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = 0 readonly/>
                     <input id = \"M" . $matchNo . "P2\" class= \"increment-button\" type=\"button\" value=\"+\" />
                     <input id = \"M" . $matchNo . "P2\" class= \"decrement-button\" type=\"button\" value=\"-\" />
                     </div>

@@ -78,7 +78,7 @@
             </script>  
     </div>
 
-    <?php echo "<a href=\"create-bracket-email.php?eventID=$eventID\">Start Tournament</a>"?>
+    <?php echo "<a href=\"create-bracket-email.php?eventID=$eventID\"><button class=\"start-button\">Start Tournament<button></a>"?>
 
     
     <div style="height: 15px">
