@@ -78,14 +78,16 @@ decrementButtons.forEach((button) => {
     //val = val+1;
     document.getElementById(scoreID).value = `${val}`;
     document.getElementById(scoreID).readOnly = true;
+    const match = scoreID.split("M")[1].split("P")[0];
+    const player = scoreID.split("P")[1];
 
-    const php = "updateDB.php?eventID=" + eventID + "&matchID=" + scoreID.substring(1,2)  + "&player="+ scoreID.substring(3,4) + "&score=" + val;
+    const php = "updateDB.php?eventID=" + eventID + "&matchID=" + match  + "&player="+ player + "&score=" + val;
     console.log(php);
-    var xmlhttp = new XMLHttpRequest();
+    const xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
        // MANAGE THE RESPONSE
-       var response = this.responseText;
+       const response = this.responseText;
       }
     }
     xmlhttp.open("POST", php, true);
@@ -93,3 +95,5 @@ decrementButtons.forEach((button) => {
 
   });
 });
+
+ 

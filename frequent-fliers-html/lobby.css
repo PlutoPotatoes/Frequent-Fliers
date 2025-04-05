@@ -195,3 +195,7 @@ body{
   .flier-name{
     margin:auto;
   }
+
+  .kick-button{
+    background-color: #78c0e0;
+  }

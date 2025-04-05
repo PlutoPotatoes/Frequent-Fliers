@@ -24,13 +24,13 @@ if (!$result) {
 $tableSize = ($result->num_rows + 1) * 45;
 
 // Build the HTML table
-echo "<div class=\"lobby-table\"><table><thead><tr><th></th><th>Lobby</th></tr></thead><tbody>";
+echo "<div id=\"$eventID\" class=\"lobby-table\"><table><thead><tr><th></th><th>Lobby</th></tr></thead><tbody>";
 
 while ($row = $result->fetch_assoc()) {
     $name = $row["playerName"];
     $userID= $row["userID"];
 
-    echo "<tr><td><button class=\"deleteButton\" id=\"$userID\">X</button></td><td class=\"flier-name\">$name</td></tr>";
+    echo "<tr><td><button class=\"kick-button\" id=\"$userID\">X</button></td><td class=\"flier-name\">$name</td></tr>";
 }
 
 echo "</tbody></table></div>";

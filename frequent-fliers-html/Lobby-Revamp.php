@@ -63,7 +63,7 @@
         <div class="pin">PIN: <?php echo $eventID;?></div>
         </div>
     </div>
-    <div class=table-spacer></div>
+    <div id= <?php echo $eventID?> class=table-spacer></div>
         <!--Player Table-->
     <div id="table-holder">
         
@@ -80,7 +80,7 @@
 
     <?php echo "<a href=\"create-bracket-email.php?eventID=$eventID\"><button class=\"start-button\">Start Tournament<button></a>"?>
 
-    
+    <script type="module" src="lobby.js"></script>
     <div style="height: 15px">
     <!-- add social media stuff here? -->
     </div>
