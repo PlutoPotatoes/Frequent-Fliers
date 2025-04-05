@@ -77,11 +77,11 @@
             });
             </script>  
     </div>
-
-    <?php echo "<a href=\"create-bracket-email.php?eventID=$eventID\"><button class=\"start-button\">Start Tournament<button></a>"?>
-
+    <div class="start-holder">
+        <a href="create-bracket-email.php?eventID=<?= $eventID?>"><button class="start-button">Start Tournament</button></a>
+    </div>
     <script type="module" src="lobby.js"></script>
-    <div style="height: 15px">
+    <div class="social-media-bar">
     <!-- add social media stuff here? -->
     </div>
 

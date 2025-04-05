@@ -23,7 +23,6 @@ function getButtons(){
           }
           xmlhttp.open("POST", php, true);
           xmlhttp.send();
-          console.log("sent");
       
         });
       });
