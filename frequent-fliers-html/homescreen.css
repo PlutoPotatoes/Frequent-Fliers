@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +8,15 @@ body, html {
     background-color: #FFD6C0;
 }
 
-h1, h2, p {
+h1 {
+    font-family: 'Faster One';
+    font-weight: 400;
+    margin: 1rem auto;
+    max-width: 90%;
+    color: #EC368D
+}
+
+h2, p {
     margin: 1rem auto;
     max-width: 90%;
     color: #EC368D
