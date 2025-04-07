@@ -78,7 +78,7 @@
     </div>
     <script type="module" src="lobby.js"></script>
     <div class="social-media-bar">
-    <!-- add social media stuff here? -->
+        <p>Insert social media stuff</p>
     </div>
 
 </body>
