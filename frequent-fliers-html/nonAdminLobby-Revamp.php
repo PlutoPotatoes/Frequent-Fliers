@@ -21,6 +21,18 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+// Check if playerName and email are set
+if (isset($_GET["playerName"]) && isset($_GET["email"])) {
+    $playerName = $_GET["playerName"];
+    $email = $_GET["email"]; // Optional, only use if we store emails
+
+    // Insert player into attendee table
+    $insertSQL = "INSERT INTO attendee (eventID, playerName) VALUES (?, ?)";
+    $stmt = $conn->prepare($insertSQL);
+    $stmt->bind_param("is", $eventID, $playerName);
+    $stmt->execute();
+    $stmt->close();
+}
 
     // below is the code to get the QR code image from the database
     
@@ -84,5 +96,7 @@
     <div class="social-media-bar">
     <!-- add social media stuff here? -->
     </div>
+    <button type="button" id="go-back">Undo and Go Back</button>
 
+    
 </body>
