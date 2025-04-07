@@ -21,6 +21,18 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+// Check if playerName and email are set
+if (isset($_POST["playerName"]) && isset($_POST["email"])) {
+    $playerName = $_POST["playerName"];
+    $email = $_POST["email"]; // Optional, only use if we store emails
+
+    // Insert player into attendee table
+    $insertSQL = "INSERT INTO attendee (eventID, playerName) VALUES (?, ?)";
+    $stmt = $conn->prepare($insertSQL);
+    $stmt->bind_param("is", $eventID, $playerName);
+    $stmt->execute();
+    $stmt->close();
+}
 
     // below is the code to get the QR code image from the database
     
@@ -32,10 +44,6 @@
     $result = $conn->query($sql);
     $eventName = mysqli_fetch_column($result);
 
-    $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID;";
-    $result = $conn->query($sql);
-    $tableSize = $result->num_rows;
-    $tableSize = ($tableSize+1)*45;
 
 
 ?>
@@ -47,7 +55,7 @@
         <img class="banner" src="cloudBanner.jpg"/> 
     </div>
     <div class="nav-menu">
-        <a href= "FF-event-signup.html"> <button class="home-button">Home</button></a>
+        <a href= "event-signup.html"> <button class="home-button">Home</button></a>
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>
@@ -70,19 +78,21 @@
 
             <script>
             $(document).ready(function(){
-            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
+            $('#table-holder').load('Guest-Lobby-Table.php?eventID=<?php echo $eventID?>');
             setInterval(function(){
-                $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
+                $('#table-holder').load('Guest-Lobby-Table.php?eventID=<?php echo $eventID?>');
             }, 5000);
             });
             </script>  
     </div>
     <div class="start-holder">
-        <a href="create-bracket-email.php?eventID=<?= $eventID?>"><button class="start-button">Start Tournament</button></a>
+       
     </div>
     <script type="module" src="lobby.js"></script>
     <div class="social-media-bar">
     <!-- add social media stuff here? -->
     </div>
+    <button type="button" id="go-back">Undo and Go Back</button>
 
+    
 </body>

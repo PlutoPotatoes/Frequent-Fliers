@@ -30,7 +30,7 @@ while ($row = $result->fetch_assoc()) {
     $name = $row["playerName"];
     $userID= $row["userID"];
 
-    echo "<tr><td><button class=\"deleteButton\" data-userid=\"$userID\">👟</button></td><td class=\"flier-name\">$name</td></tr>";
+    echo "<tr><td><button class=\"deleteButton\" id=\"$userID\">👟</button></td><td class=\"flier-name\">$name</td></tr>";
 
 }
 
