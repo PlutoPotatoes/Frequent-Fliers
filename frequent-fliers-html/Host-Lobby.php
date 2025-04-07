@@ -37,7 +37,7 @@
 ?>
 <body>
     <div class="top-menu">
-        <a href="FF-home-screen.html"> <button class="logo-button">LAKF</button> </a>
+        <a href= <?php echo __DIR__ ."index.html"?>> <button class="logo-button">LAKF</button> </a>
     </div>
     <div class="banner-container">
         <img class="banner" src="cloudBanner.jpg"/> 
