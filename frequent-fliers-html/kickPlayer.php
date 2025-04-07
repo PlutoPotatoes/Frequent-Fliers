@@ -1,7 +1,9 @@
 <?php
 
-$eventID = $_GET["eventID"];
-$userID = $_GET["userID"];
+// Added (ints) to prevent SQL injection
+$eventID = (int) $_GET["eventID"];
+$userID = (int) $_GET["userID"];
+
 
 
 //server connection details
