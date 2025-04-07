@@ -21,18 +21,6 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-// Check if playerName and email are set
-if (isset($_GET["playerName"]) && isset($_GET["email"])) {
-    $playerName = $_GET["playerName"];
-    $email = $_GET["email"]; // Optional, only use if we store emails
-
-    // Insert player into attendee table
-    $insertSQL = "INSERT INTO attendee (eventID, playerName) VALUES (?, ?)";
-    $stmt = $conn->prepare($insertSQL);
-    $stmt->bind_param("is", $eventID, $playerName);
-    $stmt->execute();
-    $stmt->close();
-}
 
     // below is the code to get the QR code image from the database
     
@@ -44,10 +32,6 @@ if (isset($_GET["playerName"]) && isset($_GET["email"])) {
     $result = $conn->query($sql);
     $eventName = mysqli_fetch_column($result);
 
-    $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID;";
-    $result = $conn->query($sql);
-    $tableSize = $result->num_rows;
-    $tableSize = ($tableSize+1)*45;
 
 
 ?>
@@ -82,21 +66,19 @@ if (isset($_GET["playerName"]) && isset($_GET["email"])) {
 
             <script>
             $(document).ready(function(){
-            $('#table-holder').load('nonAdminGetTable.php?eventID=<?php echo $eventID?>');
+            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
             setInterval(function(){
-                $('#table-holder').load('nonAdminGetTable.php?eventID=<?php echo $eventID?>');
+                $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
             }, 5000);
             });
             </script>  
     </div>
     <div class="start-holder">
-       
+        <a href="create-bracket-email.php?eventID=<?= $eventID?>"><button class="start-button">Start Tournament</button></a>
     </div>
     <script type="module" src="lobby.js"></script>
     <div class="social-media-bar">
     <!-- add social media stuff here? -->
     </div>
-    <button type="button" id="go-back">Undo and Go Back</button>
 
-    
 </body>

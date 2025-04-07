@@ -68,7 +68,6 @@ $players = $conn->query($sql);
             OR (player2 = $userID AND player2Score > player1Score);";
             $wins = $conn->query($sql)->fetch_assoc();
             $wins = array_pop($wins);
-            //$standings["userID"][0] for that persons winds and [1] for their name
             array_push($standings, array('id'=>$userID, 'wins'=>$wins, 'name'=>$name));
         
         
@@ -85,6 +84,9 @@ $players = $conn->query($sql);
 <?php
         $rank = 1;
         foreach($standings as $player){
+            if($player['id'] == -1){
+                continue;
+            }
             $playerName = $player['name'];
             $playerWins = $player['wins'];
             echo "<tr ><td class=\"table-rank\">$rank</td><td class=\"table-name\">$playerName</td><td class=\"table-wins\">$playerWins</td></tr>";

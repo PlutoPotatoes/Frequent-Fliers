@@ -21,12 +21,12 @@ if ($conn->connect_error) {
 
 //grab data from the form
 $event = $_POST["event-name"];
-$name = $_POST["name"];
+$name = $_POST["host-name"];
 $email = $_POST["email"];
 
 //create event in the kiteEvent table
 $sql = "INSERT INTO kiteEvent (eventName)
-VALUES ('$event');";
+VALUES (\"$event\");";
 
 if ($conn->query($sql) === TRUE) {
     //on success get eventID
@@ -38,7 +38,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 //create QR code using new eventID
-$qrCode = new QrCode("http://localhost:8000/eventSignup.php?eventID=$eventID");
+$qrCode = new QrCode("http://localhost:8000/event-signup.php?eventID=$eventID");
 $writer = new PngWriter();
 
 //save the QRCode Momentarily 
@@ -68,10 +68,10 @@ echo '<img src="data:image/jpeg;base64,' . base64_encode($QRContent) . '" alt="U
 
 //add creator as player
 $sql = "INSERT INTO attendee (playerName, email, eventID) 
-VALUES ('$name', '$email', $eventID);";
+VALUES (\"$name\", \"$email\", $eventID);";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: http://localhost:8000/signup-success.html"); //FIXME CHANGE THIS TO NEW EVENT LOBBY
+    header("Location: http://localhost:8000/Host-Lobby.php?eventID=$eventID"); //FIXME CHANGE THIS TO NEW EVENT LOBBY
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
