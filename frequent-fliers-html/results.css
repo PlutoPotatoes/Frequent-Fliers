@@ -1,0 +1,41 @@
+.table-name{
+    margin:auto;
+}
+
+.table-wins{
+    margin:auto;
+}
+
+.standings-holder{
+    display: flex;
+    table-layout: auto;
+    width: 100%;
+    height:fit-content;
+    background-color: transparent;
+    align-content: center;
+    justify-content: center;
+}
+
+.standings-table{
+    text-align: center;    
+    background-color: #FFA5A5;
+    width: fit-content;
+    margin: 10px;
+    border: 1px solid black;
+
+}
+
+.table-name{
+    text-align: center;
+    margin: 10px;
+}
+
+.table-wins{
+    text-align: center;
+    margin: 10px;
+
+}
+
+.table-rank{
+    text-align: center;
+}

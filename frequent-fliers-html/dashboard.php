@@ -50,7 +50,7 @@ $matches = $conn->query($sql);
     </div>
 
 
-    <form method = "post" action = <?php echo "tally-scores.php?eventID=$eventID"; ?>>
+    <form method = "post" action = <?php echo "event-results.php?eventID=$eventID"; ?>>
         <div class="accordion" name="match-list" id=<?php echo $eventID?>>
             <?php
                 while($match = $matches->fetch_assoc()){
@@ -60,29 +60,23 @@ $matches = $conn->query($sql);
                     $p1Score = $match["player1Score"];
                     $p2Score = $match["player2Score"];
 
-                    $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID AND userID IN ($p1, $p2);";
+                    $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID AND userID = $p1;";
                     $players = $conn->query($sql);
                     $p1 = $players->fetch_assoc()["playerName"];
+
+                    $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID AND userID = $p2;";
+                    $players = $conn->query($sql);
                     $p2 = $players->fetch_assoc()["playerName"];
+                    
                     if($p1=="Rest Round"){
                         $accordion = "<div class=\"accordion-item\">
-                                <h2 class=\"accordion-title\"> Match $matchNo</h2>
-                                <div class=\"match-menu\">
-                                <div class=\"player-label\">";
-                        $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p2 . "'s Rest Round</label>
-                        </div>
-                        </div>
+                                <h2 class=\"rest-title\"> $p2's Rest Round</h2>
                         </div>";
                         echo $accordion;
                         continue;
                     }elseif($p2=="Rest Round"){
                         $accordion = "<div class=\"accordion-item\">
-                                <h2 class=\"accordion-title\"> Match $matchNo</h2>
-                                <div class=\"match-menu\">
-                                <div class=\"player-label\">";
-                        $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Rest Round</label>
-                        </div>
-                        </div>
+                                <h2 class=\"rest-title\"> $p1's Rest Round</h2>
                         </div>";
                         echo $accordion;
                         continue;
