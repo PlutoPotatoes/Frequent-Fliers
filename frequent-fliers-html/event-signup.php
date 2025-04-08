@@ -18,7 +18,7 @@
     
     <form action=<?php echo "Guest-Lobby.php?eventID=" . $eventID ?> method="Post">
         <label for="pin">Pin Number*:</label>
-        <input type="text" id="pin" name="eventID" placeholder="1234" <?php echo "value =$eventID";?> <?php if($eventID != ""){echo "readonly";} ?>
+        <input type="text" id="pin" name="eventID" placeholder="1234" <?php echo "value =$eventID";?> <?php if($eventID != ""){echo "readonly";} ?>>
       
         <label for="name">Flier Name*:</label>
         <input type="text" id="name" name="playerName" required />
