@@ -31,6 +31,11 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    //clear database of any duplicates
+    $sql = "DELETE FROM eventMatch WHERE eventID = $eventID;";
+    $conn->query($sql);
+    $sql = "DELETE FROM attendee WHERE userID=-1;";
+    $conn->query($sql);
 
     //query database for event attendees
     $getAttendees = "SELECT * FROM attendee WHERE eventID = $eventID;";
@@ -45,9 +50,13 @@
             "name" => $row["playerName"]
         );
     }
+    $userIDs = array_keys($attendees);
+
+    //Delete any duplicate events in the DB
+
+
 
     //add rest round to database and $userIDs if needed
-    $userIDs = array_keys($attendees);
     if(count($userIDs)%2 == 1){
         $sql = "INSERT INTO attendee (userID, playerName, email, eventID) values (-1, 'Rest Round', null, $eventID );";
         $conn->query($sql);
@@ -55,8 +64,7 @@
         array_push($userIDs, -1);
     }
 
-    $sql = "DELETE FROM eventMatch WHERE eventID = $eventID;";
-    $conn->query($sql);
+
     //create master schedule array
     //each match is an array with 2 userIDs as values
     $matchNo = 1;
@@ -69,7 +77,8 @@
             $p1 = $userIDs[$n-1-$j];
             $p2 = $userIDs[$j];
 
-            echo $p1 . " " . $p2 . "<br>";
+            echo $p1 . " " . $p1 . "<br>";  
+
             $attackSide;
             if(rand(0,1)==1){
                 $attackSide = 'top';
@@ -113,8 +122,12 @@
         //get row data
         $attackSide = $row["attackSide"];
         $matchNo = $row["matchNo"];
-        $name1 = $attendees[$row["player1"]]["name"];
-        $name2 = $attendees[$row["player2"]]["name"];
+        if($row["player1"] != -1){
+            $name1 = $attendees[$row["player1"]]["name"];
+        }
+        if($row["player2"] != -1){
+            $name2 = $attendees[$row["player2"]]["name"];
+        }
 
         //add data to the html email string
         $emailStr = $emailStr .'<td>' . $matchNo . '</td>'; //get items 
@@ -138,8 +151,12 @@
         }
 
     }
-
+    try{
     $mail->send();
+    }catch (Exception $e) {
+        header("Location: dashboard.php?eventID=$eventID");
+        exit();
+    }
 
     header("Location: dashboard.php?eventID=$eventID");
     exit();

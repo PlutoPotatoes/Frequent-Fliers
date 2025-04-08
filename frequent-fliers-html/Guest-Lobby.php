@@ -8,7 +8,7 @@
 </head> <!--FIXME - add metadata?-->
 <?php
     //needs to be called as Lobby.php?eventID=###
-    $eventID = $_GET["eventID"];
+    $eventID = $_POST["eventID"];
 
     //server connection details
     $host = 'sql.cianci.io';
@@ -86,13 +86,13 @@ if (isset($_POST["playerName"]) && isset($_POST["email"])) {
             </script>  
     </div>
     <div class="start-holder">
-       
+        <button class="leave-button" type="button" id="go-back">Leave Lobby</button>   
     </div>
     <script type="module" src="lobby.js"></script>
     <div class="social-media-bar">
     <!-- add social media stuff here? -->
     </div>
-    <button type="button" id="go-back">Undo and Go Back</button>
+
 
     
 </body>

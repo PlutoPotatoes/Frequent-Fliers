@@ -37,13 +37,14 @@
 ?>
 <body>
     <div class="top-menu">
-        <a href= <?php echo __DIR__ ."index.html"?>> <button class="logo-button">LAKF</button> </a>
+        <a href= "index.html"> <button class="logo-button">LAKF</button> </a>
     </div>
     <div class="banner-container">
         <img class="banner" src="cloudBanner.jpg"/> 
     </div>
     <div class="nav-menu">
-        <a href= "FF-event-signup.html"> <button class="home-button">Home</button></a>
+        <a href= "index.html"> <button class="home-button">Home</button></a>
+        <a href= "event-signup.php"> <button class="home-button">Join an Event</button></a>
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>
@@ -74,7 +75,7 @@
             </script>  
     </div>
     <div class="start-holder">
-        <a href=<?php echo __DIR__."create-bracket-email.php?eventID=<?= $eventID?>";?>><button class="start-button">Start Tournament</button></a>
+        <a href="create-bracket-email.php?eventID=<?=$eventID?>"><button class="start-button">Start Tournament</button></a>
     </div>
     <script type="module" src="lobby.js"></script>
     <div class="social-media-bar">
