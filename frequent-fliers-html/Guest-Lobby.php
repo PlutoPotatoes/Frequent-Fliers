@@ -8,7 +8,10 @@
 </head> <!--FIXME - add metadata?-->
 <?php
     //needs to be called as Lobby.php?eventID=###
-    $eventID = $_POST["eventID"];
+    $eventID=$_GET["eventID"];
+    if($eventID == ""){
+        $eventID = $_POST["eventID"];
+    }
 
     //server connection details
     $host = 'sql.cianci.io';
@@ -36,7 +39,7 @@ if (isset($_POST["playerName"]) && isset($_POST["email"])) {
 
     // below is the code to get the QR code image from the database
     
-    $sql = "SELECT img FROM QRCode where eventID = $eventID";
+    $sql = "SELECT img FROM QRCode where eventID = $eventID;";
     $result = $conn->query($sql);
     $img = mysqli_fetch_column($result);
 
@@ -49,13 +52,14 @@ if (isset($_POST["playerName"]) && isset($_POST["email"])) {
 ?>
 <body>
     <div class="top-menu">
-        <a href="FF-home-screen.html"> <button class="logo-button">LAKF</button> </a>
+        <a href="index.html"> <button class="logo-button">LAKF</button> </a>
     </div>
     <div class="banner-container">
         <img class="banner" src="cloudBanner.jpg"/> 
     </div>
     <div class="nav-menu">
-        <a href= "event-signup.html"> <button class="home-button">Home</button></a>
+        <a href= "index.html"> <button class="home-button">Home</button></a>
+        <a href= "host-event.html"> <button class="home-button">Host an Event</button></a>
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>

@@ -16,7 +16,8 @@
 
     <!--updates HTML form to send data to nonAdminGetTable.php-->
     
-    <form action=<?php echo "Guest-Lobby.php?eventID=" . $eventID ?> method="Post">
+    <form action=<?php echo "Guest-Lobby.php?eventID=" . $eventID; ?> method="Post">
+    <!-- Need to actually require this, causes errors when not filled out -->
         <label for="pin">Pin Number*:</label>
         <input type="text" id="pin" name="eventID" placeholder="1234" <?php echo "value =$eventID";?> <?php if($eventID != ""){echo "readonly";} ?>>
       

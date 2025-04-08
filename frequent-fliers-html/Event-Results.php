@@ -45,8 +45,8 @@ $players = $conn->query($sql);
         <img class="banner" src="cloudBanner.jpg"/> 
     </div>
     <div class="nav-menu">
-        <a href= "FF-home-screen.html"> <button class="home-button">Home</button></a>
-        <a href= "FF-event-signup.html"> <button class="home-button">Join an Event</button></a>
+        <a href= "index.html"> <button class="home-button">Home</button></a>
+        <a href= "event-signup.php"> <button class="home-button">Join an Event</button></a>
 
     </div>
     <div class="event-title-box">
