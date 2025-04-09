@@ -9,9 +9,9 @@
 <?php
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
-<div class="header-bar"></div>
-    <h3>LAKF</h3>
-    <img class="img" src="https://t3.ftcdn.net/jpg/02/67/83/92/360_F_267839295_jVbzpVskpRpnPaq3xLFjjX9gYjNRocxN.jpg"/> <!--added img, FIXME need to fix size-->
+    <div class="header-bar"></div>
+    <div class="lakf-logo">LAKF</div>
+    <img class="img" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
     <h1>Sign Up<br/>To Fly!</h1>
 
     <!--updates HTML form to send data to nonAdminGetTable.php-->
