@@ -122,12 +122,12 @@
         //get row data
         $attackSide = $row["attackSide"];
         $matchNo = $row["matchNo"];
-        if($row["player1"] != -1){
-            $name1 = $attendees[$row["player1"]]["name"];
-        }
-        if($row["player2"] != -1){
-            $name2 = $attendees[$row["player2"]]["name"];
-        }
+
+        $name1 = $attendees[$row["player1"]]["name"];
+
+
+        $name2 = $attendees[$row["player2"]]["name"];
+        
 
         //add data to the html email string
         $emailStr = $emailStr .'<td>' . $matchNo . '</td>'; //get items 
