@@ -36,12 +36,19 @@ $matches = $conn->query($sql);
     <div class="header-bar">
         <a  href="index.html" ><div class="lakf-logo">LAKF</div></a>
     </div>
-    <div class="banner-container">
-        <img class="banner" src="cloudBanner.jpg" />
-    </div>
-    <div class="nav-banner">
-        <button class="home-button" >HOME</button>
-        <button class="home-button" >HOME</button>
+
+    <img class="banner" src="cloudBanner.jpg" alt="lakf banner" />
+    <h1>Los Angeles<br/>Kite Fighting</h1>
+
+    <div class="button-bar">
+        <div class="button-container">
+            <a href="index.html">
+                <button class="nav-button">Home</button>
+            </a>
+            <a href="event-signup.php">
+                <button class="nav-button">Join a Match</button> 
+            </a>
+        </div>
     </div>
 
     <div>
