@@ -33,8 +33,8 @@ $matches = $conn->query($sql);
 
 <body>
 
-    <div class="top-menu">
-        <button class="logo-button">LAKF</button>
+    <div class="header-bar">
+        <a  href="index.html" ><div class="lakf-logo">LAKF</div></a>
     </div>
     <div class="banner-container">
         <img class="banner" src="cloudBanner.jpg" />
@@ -59,6 +59,7 @@ $matches = $conn->query($sql);
                     $p2 = $match["player2"];
                     $p1Score = $match["player1Score"];
                     $p2Score = $match["player2Score"];
+                    $attackSide = $match["attackSide"];
 
                     $sql = "SELECT playerName FROM attendee WHERE eventID=$eventID AND userID = $p1;";
                     $players = $conn->query($sql);
@@ -82,7 +83,7 @@ $matches = $conn->query($sql);
                         continue;
                     }
                     $accordion = "<div class=\"accordion-item\">
-                                <h2 class=\"accordion-title\" id=\"M$matchNo\"> Match $matchNo</h2>
+                                <h2 class=\"accordion-title\" id=\"M$matchNo\"> Match $matchNo: $p1 vs. $p2 (attacking $attackSide)</h2>
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
                     $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
