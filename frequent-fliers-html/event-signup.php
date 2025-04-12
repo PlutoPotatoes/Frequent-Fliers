@@ -10,9 +10,21 @@
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
     <div class="header-bar"></div>
-    <div class="lakf-logo">LAKF</div>
+    <!-- WHY ARE YOU BLUE-->
+    <a class="logo-block" href="index.html"><div class="lakf-logo">LAKF</div></a>
     <img class="img" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
     <h1>Sign Up<br/>To Fly!</h1>
+
+    <div class="button-bar">
+        <div class="button-container">
+            <a href="index.html">
+                <button class="home-button">Home</button>
+            </a>
+            <a href="host-event.html">
+                <button class="home-button">Host an Event</button>
+            </a>
+        </div>
+    </div>
 
     <!--updates HTML form to send data to nonAdminGetTable.php-->
     
@@ -40,8 +52,8 @@
         </div>
 
         <div class="form-buttons">
-            <input type="reset" />
-            <input type="submit" value="Submit Query" />
+            <input type="reset" class="form-button" value="Reset">
+            <input type="submit" class="form-button" value="Join Event">
         </div>
     </form>
       

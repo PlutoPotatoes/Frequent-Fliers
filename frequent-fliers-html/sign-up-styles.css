@@ -32,13 +32,12 @@ h2, p {
 }
 
 .lakf-logo {
-    position: fixed;
+    position: absolute;
     top: 10px;
     left: 20px;
-    font-size: 24px;
-    color: #EC368D;
     font-family: 'Faster One', cursive;
-    z-index: 11;
+    font-size: 24px;
+    z-index: 10;
 }
 
 .img {
@@ -60,6 +59,14 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
+.button-bar {
+    position: relative;
+    top: -20px; /* Ensures the bar appears just below the image */
+    background-color: #FFA5A5;
+    padding: 20px 0;
+    width: 100%;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -78,25 +85,11 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.2s ease;
+    min-width: 142px;
 }
 
 button:hover {
     transform: scale(1.05);
-}
-
-
-.button-bar {
-    width: 100%;
-    background-color: #FFA5A5;
-    padding: 20px 0;
-}
-
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
 /* Event Form Styling */
@@ -166,6 +159,7 @@ button:hover {
 .form-button:hover {
     transform: scale(1.05);
 }
+
 
 
 @media screen and (max-width: 600px) {

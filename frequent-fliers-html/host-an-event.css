@@ -8,13 +8,12 @@ body, html {
     background-color: #FFD6C0;
 }
 
-h3.lakf-logo {
+.lakf-logo {
     position: absolute;
     top: 10px;
     left: 20px;
     font-family: 'Faster One', cursive;
-    font-size: 1.8rem;
-    color: #EC368D;
+    font-size: 24px;
     z-index: 10;
 }
 
@@ -158,6 +157,11 @@ button:hover {
 @media screen and (max-width: 600px) {
     h1 {
         font-size: 2rem;
+    }
+
+    .lakf-logo {
+        font-size: 18px;
+        left: 10px;
     }
 
     .form-button {
