@@ -80,6 +80,7 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.2s ease;
+    min-width: 142px;
 }
 
 button:hover {
