@@ -63,7 +63,7 @@ if (isset($_POST["playerName"]) && isset($_POST["email"])) {
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>
-        <p class="instructions">Scan the QR code or enter the pin from the signup page to join the game<p>
+        <p class="instructions">🌟 Ready to play? Scan the QR code to join the lobby! 🪁✨<p>
     </div>
     <div class="pin-box">
 
