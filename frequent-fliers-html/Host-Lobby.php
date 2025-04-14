@@ -72,19 +72,26 @@
     <div id="table-holder">
         
 
-            <script>
-            $(document).ready(function(){
+        <script>
+        $(document).ready(function(){
+        $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
+        setInterval(function(){
             $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
-            setInterval(function(){
-                $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
-            }, 5000);
-            });
-            </script>  
+        }, 500);
+        });
+        </script>  
+
+        <div class="start-holder">
+            <a href="create-bracket-email.php?eventID=<?=$eventID?>"><button class="start-button">Start Tournament</button></a>
+        </div>
     </div>
+
+
     <div class="start-holder">
         <a href="create-bracket-email.php?eventID=<?=$eventID?>"><button class="start-button">Start Tournament</button></a>
     </div>
     <script type="module" src="lobby.js"></script>
+
     <div class="social-media-bar">
         <p>Insert social media stuff</p>
     </div>

@@ -32,12 +32,13 @@ h2, p {
 }
 
 .lakf-logo {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 20px;
     font-family: 'Faster One', cursive;
     font-size: 24px;
     z-index: 10;
+    color:#EC368D;
 }
 
 .img {

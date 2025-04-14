@@ -2,12 +2,12 @@
 //need to get kickButtons every few seconds instead of just at the start, list in static
 //either set an interval or include this in the getTable.php script
 const interval = setInterval(getButtons, 500);
-let kickButtons = document.querySelectorAll(".deleteButton");
+let kickButtons = document.querySelectorAll(".kick-button");
 const eventID = document.querySelector(".table-spacer").id
 
 
 function getButtons(){
-    kickButtons = document.querySelectorAll(".deleteButton");
+    kickButtons = document.querySelectorAll(".kick-button");
     kickButtons.forEach((button) => {
         const id = button.id;
         button.addEventListener("click", () =>{

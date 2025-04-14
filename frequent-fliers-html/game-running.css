@@ -57,8 +57,10 @@ body, html {
   }
 
   .player-label{
+
     text-align:center;
     padding: 5px;
+    width: 100%;
   }
 
   .score{
@@ -309,4 +311,14 @@ h1 {
   align-content: center;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+label{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+
 }

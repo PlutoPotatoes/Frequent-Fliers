@@ -2,7 +2,6 @@
 <head>
     <!--FIXME at some point change sizing for viewport <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="lobby.css">
     <link rel="stylesheet" href="results.css">
     
 
@@ -38,16 +37,23 @@ $players = $conn->query($sql);
 
 ?>
 <body>
-    <div class="top-menu">
-        <a href="FF-home-screen.html"> <button class="logo-button">LAKF</button> </a>
+    <div class="header-bar">
+        <a  href="index.html" ><div class="lakf-logo">LAKF</div></a>
     </div>
-    <div class="banner-container">
-        <img class="banner" src="cloudBanner.jpg"/> 
-    </div>
-    <div class="nav-menu">
-        <a href= "index.html"> <button class="home-button">Home</button></a>
-        <a href= "event-signup.php"> <button class="home-button">Join an Event</button></a>
 
+    <img class="banner" src="cloudBanner.jpg" alt="lakf banner" />
+    <h1>Los Angeles<br/>Kite Fighting</h1>
+
+    <div class="button-bar">
+        <div class="button-container">
+            <a href="index.html">
+                <button class="nav-button">Home</button>
+            </a>
+            <a href="host-event.html">
+                <button class="nav-button">Host an Event</button> 
+            </a>
+        </div>
+    </div>
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?> Results</p>
@@ -55,7 +61,7 @@ $players = $conn->query($sql);
     
     <div class="standings-holder" >
         <?php
-        echo "<div class=\"standings-table\"><table><thead><tr><th></th><th>Flyer Name</th><th>Wins</th></tr></thead><tbody>";
+        echo "<div class=\"standings-table\"><table class=\"ranking-table\"><thead><tr><th class=\"rank-spacer\"></th><th>Flyer Name</th><th>Wins</th></tr></thead><tbody>";
 
         while($player = $players->fetch_assoc()){
             //get player info
@@ -89,7 +95,7 @@ $players = $conn->query($sql);
             }
             $playerName = $player['name'];
             $playerWins = $player['wins'];
-            echo "<tr ><td class=\"table-rank\">$rank</td><td class=\"table-name\">$playerName</td><td class=\"table-wins\">$playerWins</td></tr>";
+            echo "<tr><td class=\"table-rank\">$rank</td><td class=\"table-name\">$playerName</td><td class=\"table-wins\">$playerWins</td></tr>";
             $rank++;
         }
         

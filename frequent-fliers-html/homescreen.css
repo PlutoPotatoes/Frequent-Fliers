@@ -20,7 +20,6 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     font-family: 'Faster One';
     font-weight: 400;
-    color: #EC368D;
     margin: 1rem auto;
     max-width: 90%;
   }  
@@ -50,13 +49,7 @@ h2, p {
     z-index: 11;
 }
 
-.img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-}
+
 
 .homepage-title {
     position: absolute;
@@ -126,4 +119,11 @@ button:hover {
         width: 100%;
         max-width: 200px;
     }
+}
+
+.banner{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    margin:0px;
 }
