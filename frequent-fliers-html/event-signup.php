@@ -28,7 +28,7 @@
 
     <!--updates HTML form to send data to nonAdminGetTable.php-->
     
-    <form action=<?php echo "Guest-Lobby.php?eventID=" . $eventID; ?> method="Post" class="event-form">
+    <form action="join-lobby.php?eventID=" method="Post" class="event-form">
     <!-- Need to actually require this, causes errors when not filled out -->
         <div class="form-group">
             <label for="pin">Pin Number*:</label>
