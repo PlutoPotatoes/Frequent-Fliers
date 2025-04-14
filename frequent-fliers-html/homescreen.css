@@ -20,10 +20,10 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     font-family: 'Faster One';
     font-weight: 400;
+    color: #EC368D;
     margin: 1rem auto;
     max-width: 90%;
-    color: #EC368D
-}
+  }  
 
 h2, p {
     margin: 1rem auto;
@@ -52,13 +52,20 @@ h2, p {
 
 .img {
     width: 100%;
-    height: 80vh;
+    height: 50vh;
     object-fit: cover;
     position: relative;
     z-index: 1;
 }
 
-
+.homepage-title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  }
 
 .button-container {
     display: flex;

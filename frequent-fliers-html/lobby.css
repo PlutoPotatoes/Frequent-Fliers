@@ -165,13 +165,13 @@ button:hover {
     align-items: center;
     flex-direction: column;
     margin: auto;
-    width: 20%;
-    height: 300px;
+    width: 10%;
+    height: 250px;
     min-width: 175px;
-    padding:10px;
+    padding: 10px;
     background: #FFA5A5; 
     border: 1px #EC368D solid;
-    padding: 15px;
+    padding: 10px;
 
   }
 
@@ -205,14 +205,16 @@ button:hover {
     margin:auto;
   }
 
-  .lobby-table{
+  .lobby-table {
     width: fit-content;
-    min-width: 175px;
-    height: fit-content;
+    min-width: 200px; 
+    padding: 20px 30px;
     background-color: #FFA5A5;
-    align-items: center;
-    margin: auto;
+    border-radius: 12px;      
+    margin: 30px auto;       
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
+  
   .flier-name{
     margin:auto;
   }
