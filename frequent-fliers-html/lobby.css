@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+
 body{
     width: 100%; 
     height: 100%; 
@@ -40,11 +42,38 @@ body{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.top-menu{
-    width: 100%;
-    height: 55px;
-    background-color: #FFA5A5;
-  }
+.header-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #FFA5A5;
+  z-index: 10;
+}
+
+.img {
+  width: 100%;
+  height: 70vh;  /* Adjusted to take less space */
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #EC368D;
+  font-size: 3rem;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  font-family: 'Faster One';
+  font-weight: 400;
+  margin: 1rem auto;
+  max-width: 90%;
+  color: #EC368D
+}
 
 .nav-menu{
     display: flex;
@@ -77,56 +106,48 @@ body{
     margin:0px;
 }
 
-.home-button {
-    align-self: center;
-    appearance: none;
-    backface-visibility: hidden;
-    background-color: #78c0e0;
-    border-radius: 8px;
-    border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-    font-weight: 600;
-    letter-spacing: normal;
-    line-height: 1.5;
-    outline: none;
-    overflow: hidden;
-    padding: 10px 10px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transform: translate3d(0, 0, 0);
-    transition: all .3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: center;
-    white-space: nowrap;
-    min-height: 15px;
-    min-width: 30px;
-    max-height: 50px;
-    max-width: 200px;
-    font-size: large;
-    margin: 3px;
-  }
-  
-  .home-button:hover {
-    background-color: #619db7;
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-  }
-  
-  
-  .home-button:active {
-    transform: translateY(2px);
-    transition-duration: .35s;
-  }
+.button-bar {
+  position: relative;
+  top: -20px; /* Ensures the bar appears just below the image */
+  background-color: #FFA5A5;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #78C0E0;
+  color: #fff;
+  border: 1px solid #2C2C2C;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  min-width: 142px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.lakf-logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: 'Faster One', cursive;
+  font-size: 24px;
+  z-index: 10;
+  color:#EC368D;
+}
 
   .event-title{
     color: #EC368D; 
@@ -198,6 +219,8 @@ body{
 
   .kick-button{
     background-color: #78c0e0;
+    height: 5px;
+    width: 5px;
   }
 
   .start-button{
@@ -223,3 +246,4 @@ body{
     height: 50px;
     background-color: #FFA5A5;
   }
+

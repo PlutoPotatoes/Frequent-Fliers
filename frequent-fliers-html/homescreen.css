@@ -8,7 +8,16 @@ body, html {
     background-color: #FFD6C0;
 }
 
+
 h1 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EC368D;
+    font-size: 3rem;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     font-family: 'Faster One';
     font-weight: 400;
     margin: 1rem auto;
@@ -49,16 +58,7 @@ h2, p {
     z-index: 1;
 }
 
-h1 {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #EC368D;
-    font-size: 3rem;
-    z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
+
 
 .button-container {
     display: flex;

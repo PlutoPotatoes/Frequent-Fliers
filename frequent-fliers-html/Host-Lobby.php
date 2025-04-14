@@ -36,15 +36,21 @@
 
 ?>
 <body>
-    <div class="top-menu">
-        <a href= "index.html"> <button class="logo-button">LAKF</button> </a>
-    </div>
-    <div class="banner-container">
-        <img class="banner" src="cloudBanner.jpg"/> 
-    </div>
-    <div class="nav-menu">
-        <a href= "index.html"> <button class="home-button">Home</button></a>
-        <a href= "event-signup.php"> <button class="home-button">Join an Event</button></a>
+    <div class="header-bar"></div>
+    <a href= "index.html"><div class="lakf-logo">LAKF</div></a>
+
+    <img class="img" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
+    <h1>Sign Up<br/>To Fly!</h1>
+
+    <div class="button-bar">
+        <div class="button-container">
+            <a href="index.html">
+                <button class="home-button">Home</button>
+            </a>
+            <a href="host-event.html">
+                <button class="home-button">Host an Event</button>
+            </a>
+        </div>
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>

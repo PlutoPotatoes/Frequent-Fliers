@@ -8,14 +8,7 @@ body, html {
     background-color: #FFD6C0;
 }
 
-.lakf-logo {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-family: 'Faster One', cursive;
-    font-size: 24px;
-    z-index: 10;
-}
+
 
 h1 {
     font-family: 'Faster One', cursive;
@@ -152,6 +145,16 @@ button:hover {
 
 .form-button:hover {
     transform: scale(1.05);
+}
+
+.lakf-logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: 'Faster One', cursive;
+    font-size: 24px;
+    z-index: 10;
+    color:#EC368D;
 }
 
 @media screen and (max-width: 600px) {
