@@ -83,7 +83,7 @@
             </script>  
     </div>
     <div class="start-holder">
-        <button class="leave-button" type="button" data-playerid=<?="$playerID"?> data-eventID = <?="$eventID"?>>Leave Lobby</button>   
+        <button class="leave-button" type="button" id="leave-button" data-playerid=<?="$playerID"?> data-eventID = <?="$eventID"?>>Leave Lobby</button>   
     </div>
     <script type="module" src="guest-lobby.js"></script>
     <div class="social-media-bar">
