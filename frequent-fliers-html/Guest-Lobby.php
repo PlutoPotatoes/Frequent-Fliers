@@ -9,9 +9,7 @@
 <?php
     //needs to be called as Lobby.php?eventID=###
     $eventID=$_GET["eventID"];
-    if($eventID == ""){
-        $eventID = $_POST["eventID"];
-    }
+    $playerID = $_GET["playerID"];
 
     //server connection details
     $host = 'sql.cianci.io';
@@ -24,18 +22,6 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-// Check if playerName and email are set
-if (isset($_POST["playerName"]) && isset($_POST["email"])) {
-    $playerName = $_POST["playerName"];
-    $email = $_POST["email"]; // Optional, only use if we store emails
-
-    // Insert player into attendee table
-    $insertSQL = "INSERT INTO attendee (eventID, playerName) VALUES (?, ?)";
-    $stmt = $conn->prepare($insertSQL);
-    $stmt->bind_param("is", $eventID, $playerName);
-    $stmt->execute();
-    $stmt->close();
-}
 
     // below is the code to get the QR code image from the database
     
@@ -51,19 +37,26 @@ if (isset($_POST["playerName"]) && isset($_POST["email"])) {
 
 ?>
 <body>
-    <div class="top-menu">
-        <a href="index.html"> <button class="logo-button">LAKF</button> </a>
-    </div>
-    <div class="banner-container">
-        <img class="banner" src="cloudBanner.jpg"/> 
-    </div>
-    <div class="nav-menu">
-        <a href= "index.html"> <button class="home-button">Home</button></a>
-        <a href= "host-event.html"> <button class="home-button">Host an Event</button></a>
+<div class="header-bar"></div>
+    <a href= "index.html"><div class="lakf-logo">LAKF</div></a>
+
+    <img class="img" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
+    <h1>Sign Up<br/>To Fly!</h1>
+
+    <div class="button-bar">
+        <div class="button-container">
+            <a href="index.html">
+                <button class="home-button">Home</button>
+            </a>
+            <a href="host-event.html">
+                <button class="home-button">Host an Event</button>
+            </a>
+        </div>
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>
-        <p class="instructions">🌟 Ready to play? Scan the QR code to join the lobby! 🪁✨<p>
+        <p class="instructions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌟 Ready to play? Scan the QR code to join the lobby! 🪁✨
+        <p>
     </div>
     <div class="pin-box">
 
@@ -90,9 +83,9 @@ if (isset($_POST["playerName"]) && isset($_POST["email"])) {
             </script>  
     </div>
     <div class="start-holder">
-        <button class="leave-button" type="button" id="go-back">Leave Lobby</button>   
+        <button class="leave-button" type="button" id="leave-button" data-playerid=<?="$playerID"?> data-eventID = <?="$eventID"?>>Leave Lobby</button>   
     </div>
-    <script type="module" src="lobby.js"></script>
+    <script type="module" src="guest-lobby.js"></script>
     <div class="social-media-bar">
     <!-- add social media stuff here? -->
     </div>

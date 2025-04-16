@@ -234,6 +234,12 @@ button:hover {
     background-color: #EC368D;
 
   }
+  .leave-button{
+    width: fit-content;
+    height: fit-content;
+    background-color: #EC368D;
+
+  }
 
   .start-holder{
     display: flex;
