@@ -7,27 +7,3 @@ leaveButton.addEventListener("click", ()=>{
     window.location.href = php;
 
 });
-
-/*
-function getButtons(){
-    kickButtons = document.querySelectorAll(".kick-button");
-    kickButtons.forEach((button) => {
-        const id = button.id;
-        button.addEventListener("click", () =>{
-          
-          const php = "kickPlayer.php?eventID=" + eventID + "&userID="+ id;
-          console.log(php);
-          const xmlhttp = new XMLHttpRequest();
-          xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-             // MANAGE THE RESPONSE
-             const response = this.responseText;
-            }
-          }
-          xmlhttp.open("POST", php, true);
-          xmlhttp.send();
-      
-        });
-      });
-}
-      */

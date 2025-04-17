@@ -9,9 +9,11 @@
 <?php
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
-    <div class="header-bar"></div>
+    <div class="header-bar">
     <!-- WHY ARE YOU BLUE-->
-    <a class="logo-block" href="index.html"><div class="lakf-logo">LAKF</div></a>
+        <a class="logo-block" href="index.html"><div class="lakf-logo">LAKF</div></a>
+        <a href="help.html" class="help-button">?</a>
+    </div>
     <img class="img" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
     <h1>Sign Up<br/>To Fly!</h1>
 

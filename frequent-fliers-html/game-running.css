@@ -322,3 +322,23 @@ label{
   justify-content: center;
 
 }
+.help-button {
+
+  position: fixed;
+  top: 5px;
+  right: 20px;
+  font-size: 24px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 11;
+  background-color: #EC368D;
+  border: 1px solid #2C2C2C;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: auto;
+  text-decoration: none;
+}

@@ -38,9 +38,10 @@
 <body>
     <div class="header-bar"></div>
     <a href= "index.html"><div class="lakf-logo">LAKF</div></a>
+    <a href="help.html" class="help-button">?</a>
 
     <img class="img" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
-    <h1>Sign Up<br/>To Fly!</h1>
+    <h1>Event<br>Lobby</h1>
 
     <div class="button-bar">
         <div class="button-container">

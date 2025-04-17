@@ -35,10 +35,12 @@ $matches = $conn->query($sql);
 
     <div class="header-bar">
         <a  href="index.html" ><div class="lakf-logo">LAKF</div></a>
+        <a href="help.html" class="help-button">?</a>
+
     </div>
 
     <img class="banner" src="cloudBanner.jpg" alt="lakf banner" />
-    <h1>Los Angeles<br/>Kite Fighting</h1>
+    <h1>Event<br>Dashboard</h1>
 
     <div class="button-bar">
         <div class="button-container">
