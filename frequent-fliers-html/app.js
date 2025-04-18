@@ -42,13 +42,13 @@ accordionTitles.forEach((accordionTitle) => {
 
 
 
-const incrementButtons = document.querySelectorAll(".increment-button");
+const incrementButtons = document.querySelectorAll(".touch-button");
 
 incrementButtons.forEach((button) => {
   button.addEventListener("click", () =>{
     const scoreID = button.id + "Score";
     document.getElementById(scoreID).readOnly = false;
-    const val = Math.min(parseInt(document.getElementById(scoreID).valueAsNumber, 10) + 1, 99);
+    const val = Math.min(parseInt(document.getElementById(scoreID).valueAsNumber, 10) + 1, 3);
     //val = val+1;
     document.getElementById(scoreID).value = `${val}`;
     document.getElementById(scoreID).readOnly = true;
@@ -70,20 +70,20 @@ incrementButtons.forEach((button) => {
   });
 });
   
-const decrementButtons = document.querySelectorAll(".decrement-button");
+const decrementButtons = document.querySelectorAll(".crash-button");
 
 decrementButtons.forEach((button) => {
   button.addEventListener("click", () =>{
     const scoreID = button.id + "Score";
     document.getElementById(scoreID).readOnly = false;
-    const val = Math.max(parseInt(document.getElementById(scoreID).valueAsNumber, 10) - 1, 0 );
+
     //val = val+1;
-    document.getElementById(scoreID).value = `${val}`;
+    document.getElementById(scoreID).value = 3;
     document.getElementById(scoreID).readOnly = true;
     const match = scoreID.split("M")[1].split("P")[0];
     const player = scoreID.split("P")[1].split("S")[0];
 
-    const php = "updateDB.php?eventID=" + eventID + "&matchID=" + match  + "&player="+ player + "&score=" + val;
+    const php = "updateDB.php?eventID=" + eventID + "&matchID=" + match  + "&player="+ player + "&score=" + 3;
     console.log(php);
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -98,5 +98,37 @@ decrementButtons.forEach((button) => {
   });
 });
 
+const resetButtons = document.querySelectorAll(".reset-button");
 
+resetButtons.forEach((button) => {
+  button.addEventListener("click", () =>{
+    const score1 = button.id + "P1" + "Score";
+    const score2 = button.id + "P2" + "Score";
+
+    document.getElementById(score1).readOnly = false;
+    document.getElementById(score2).readOnly = false;
+
+    document.getElementById(score1).value = 0;
+    document.getElementById(score2).value = 0;
+
+    document.getElementById(score1).readOnly = true;
+    document.getElementById(score2).readOnly = true;
+
+    const match = button.id.split("M")[1];
+
+    const php = "resetMatch.php?eventID=" + eventID + "&matchID=" + match;
+
+    console.log(php);
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+       // MANAGE THE RESPONSE
+       const response = this.responseText;
+      }
+    }
+    xmlhttp.open("POST", php, true);
+    xmlhttp.send();
+
+  });
+});
  

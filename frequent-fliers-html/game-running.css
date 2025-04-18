@@ -83,8 +83,9 @@ input::-webkit-inner-spin-button {
 }
 
 
-.increment-button,
-.decrement-button{
+
+.touch-button,
+.crash-button {
   appearance: none;
   backface-visibility: hidden;
   background-color: #EC368D;
@@ -101,7 +102,7 @@ input::-webkit-inner-spin-button {
   line-height: 1.5;
   outline: none;
   overflow: hidden;
-  padding: 10px 10px;
+  padding: 5px 5px;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -112,29 +113,28 @@ input::-webkit-inner-spin-button {
   touch-action: manipulation;
   vertical-align: top;
   white-space: nowrap;
-  min-height: 15px;
-  min-width: 15px;
-  max-height: 50px;
-  max-width: 50px;
+  width: fit-content;
   font-size: large;
-  align-self: right;
 }
 
-.increment-button:hover,
-.decrement-button:hover{
+.touch-button:hover,
+.crash-button:hover {
   background-color: #8f2156;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 
-.increment-button:active,
-.decrement-button:active{
+.touch-button:active,
+.crash-button:active {
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
+.touch-button:hover,
+.crash-button:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
 .banner-container{
   text-align: center;
   margin:0px;
@@ -341,4 +341,58 @@ label{
   text-align: center;
   margin: auto;
   text-decoration: none;
+}
+
+.reset-button{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #78c0e0;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 5px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  width:fit-content;
+  height: fit-content;
+  font-size: large;
+}
+
+.reset-button:hover {
+  background-color: #619db7;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.reset-button:active{
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.reset-button:hover{
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.score-button-holder{
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

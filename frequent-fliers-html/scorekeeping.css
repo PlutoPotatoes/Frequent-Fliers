@@ -380,8 +380,8 @@ input::-webkit-inner-spin-button {
 }
 
 
-.increment-button,
-.decrement-button {
+.touch-button,
+.crash-button {
   appearance: none;
   backface-visibility: hidden;
   background-color: #EC368D;
@@ -416,22 +416,22 @@ input::-webkit-inner-spin-button {
   font-size: large;
 }
 
-.increment-button:hover,
-.decrement-button:hover {
+.touch-button:hover,
+.crash-button:hover {
   background-color: #8f2156;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;
 }
 
-.increment-button:active,
-.decrement-button:active {
+.touch-button:active,
+.crash-button:active {
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
-.increment-button:hover,
-.decrement-button:hover {
+.touch-button:hover,
+.crash-button:hover {
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 

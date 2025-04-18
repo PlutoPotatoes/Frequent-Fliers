@@ -79,33 +79,32 @@ $matches = $conn->query($sql);
                     $p2 = $players->fetch_assoc()["playerName"];
                     
                     if($p1=="Rest Round"){
-                        $accordion = "<div class=\"accordion-item\">
-                                <h2 class=\"rest-title\"> $p2's Rest Round</h2>
-                        </div>";
-                        echo $accordion;
                         continue;
                     }elseif($p2=="Rest Round"){
-                        $accordion = "<div class=\"accordion-item\">
-                                <h2 class=\"rest-title\"> $p1's Rest Round</h2>
-                        </div>";
-                        echo $accordion;
                         continue;
                     }
+
+                    //p1 and p2 crash button ID's are swapped because they add points to the other person's score
                     $accordion = "<div class=\"accordion-item\">
                                 <h2 class=\"accordion-title\" id=\"M$matchNo\"> Match $matchNo: $p1 vs. $p2 (attacking $attackSide)</h2>
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
                     $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
                     <input name=\"M" . $matchNo . "P1Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P1Score\" value = $p1Score readonly/>
-                    <input id = \"M" . $matchNo . "P1\" class= \"increment-button\" type=\"button\" value=\"+\" />
-                    <input id = \"M" . $matchNo . "P1\" class= \"decrement-button\" type=\"button\" value=\"-\" />
+                    <div class=\"score-button-holder\">
+                    <input id = \"M" . $matchNo . "P1\" class= \"touch-button\" type=\"button\" value=\"Touch\" />
+                    <input id = \"M" . $matchNo . "P2\" class= \"crash-button\" type=\"button\" value=\"Crash\" />
+                    </div>
                     </div>";
 
                     $accordion = $accordion . "<div class=\"player-label\"><label class=\"p2Label\" for = \"M" . $matchNo . "P2Score\">". $p2 . "'s Score</label>
                     <input name=\"M" . $matchNo . "P2Score\" class = \"score\" type=\"number\" id=\"M" . $matchNo . "P2Score\" value = $p2Score readonly/>
-                    <input id = \"M" . $matchNo . "P2\" class= \"increment-button\" type=\"button\" value=\"+\" />
-                    <input id = \"M" . $matchNo . "P2\" class= \"decrement-button\" type=\"button\" value=\"-\" />
+                    <div class=\"score-button-holder\">
+                    <input id = \"M" . $matchNo . "P2\" class= \"touch-button\" type=\"button\" value=\"Touch\" />
+                    <input id = \"M" . $matchNo . "P1\" class= \"crash-button\" type=\"button\" value=\"Crash\" />
                     </div>
+                    </div>
+                    <input id = \"M$matchNo\" class= \"reset-button\" type=\"button\" value=\"Reset\" />
                     </div>
                     </div>";
                     echo $accordion;
