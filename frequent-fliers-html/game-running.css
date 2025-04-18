@@ -17,7 +17,7 @@ body, html {
     background-color:#ffc7a7;
     padding: 20px;
     margin: 0 auto;
-    width: 95%;
+    width: fit-content;
     max-width: 1200px;
     border: 4px #8f2156;
     border-radius: 5px;
@@ -97,7 +97,7 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   display: inline-block;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: normal;
   line-height: 1.5;
   outline: none;
@@ -115,6 +115,7 @@ input::-webkit-inner-spin-button {
   white-space: nowrap;
   width: fit-content;
   font-size: large;
+  border: 1px solid #2C2C2C;
 }
 
 .touch-button:hover,
@@ -219,6 +220,7 @@ h1 {
   max-width: 200px;
   font-size: large;
   margin: 3px;
+  border: 1px solid #2C2C2C;
 }
 
 .submit-button:hover {
@@ -349,13 +351,14 @@ label{
   background-color: #78c0e0;
   border-radius: 8px;
   border-style: none;
+  border: 1px solid #2C2C2C;
   box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: normal;
   line-height: 1.5;
   outline: none;
