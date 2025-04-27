@@ -30,9 +30,10 @@ $result = $conn->query($sql);
     <title>Event Archive - Los Angeles Kite Fighting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to your existing CSS for consistent styling -->
-    <link rel="stylesheet" href="homescreen.css">
     <!-- Bootstrap CSS for accordion functionality -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="homescreen.css">
     <style>
         /* Additional styling for the accordion */
         .accordion-button {
