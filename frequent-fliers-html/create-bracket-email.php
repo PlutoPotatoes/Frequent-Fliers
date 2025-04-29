@@ -1,5 +1,20 @@
-<?php
+    <?php
+    /*
+        This file is called when a lobby starts. 
+        It will create round robin tournament where each player plays every other player once.
+        Functionality is as follows
+        1. create and configure a new PHPMailer object
+        2. connect to DB and get eventID from the url
+        3. run MySQL commands to get attendees, create matchups, 
+            and create an entry for each match in the eventMatches table.
+            (automatically includes placeholders for odd numbered events)
+        4. get all attendee emails from the database
+        5. configure an HTML table displaying the match order
+        6. send an email to all attendees with said table
 
+        Last edited by Ryan Morrell 4/28/25
+    */
+    
     include('database.php');
     require "vendor/autoload.php";
     use PHPMailer\PHPMailer\PHPMailer;
@@ -21,17 +36,6 @@
     $eventID = $_GET["eventID"];
     $conn = dbConn();
 
-    //server connection details
-    // $host = 'sql.cianci.io';
-    // $dbname = 'frequentfliers';
-    // $username = 'rmorrell';
-    // $password = 'e2VaSdfES6sU';
-
-    // $conn = new mysqli($host, $username, $password, $dbname);
-
-    // if ($conn->connect_error) {
-    //     die("Connection failed: " . $conn->connect_error);
-    // }
 
     //clear database of any duplicates
     $sql = "DELETE FROM eventMatch WHERE eventID = $eventID;";
@@ -53,8 +57,6 @@
         );
     }
     $userIDs = array_keys($attendees);
-
-    //Delete any duplicate events in the DB
 
 
 
@@ -118,6 +120,19 @@
 
     //add all data to the table row by row
     while ($row = $result->fetch_assoc()) {
+        /*[Mon Apr 28 18:54:01 2025] PHP Warning:  Undefined array key -1 in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
+[Mon Apr 28 18:54:01 2025] PHP Warning:  Trying to access array offset on null in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
+[Mon Apr 28 18:54:01 2025] PHP Warning:  Undefined array key -1 in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 124
+[Mon Apr 28 18:54:01 2025] PHP Warning:  Trying to access array offset on null in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 124
+[Mon Apr 28 18:54:01 2025] PHP Warning:  Undefined array key -1 in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
+[Mon Apr 28 18:54:01 2025] PHP Warning:  Trying to access array offset on null in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
+*/
+        
+        if($row["player2"] == -1 || $row["player1"] == -1){
+            continue;
+        }
+        $name1 = $attendees[$row["player1"]]["name"];
+        $name2 = $attendees[$row["player2"]]["name"];
         //start new row
         $emailStr = $emailStr . "<tr>";
 
@@ -125,10 +140,6 @@
         $attackSide = $row["attackSide"];
         $matchNo = $row["matchNo"];
 
-        $name1 = $attendees[$row["player1"]]["name"];
-
-
-        $name2 = $attendees[$row["player2"]]["name"];
         
 
         //add data to the html email string
@@ -153,8 +164,9 @@
         }
 
     }
+
     try{
-    $mail->send();
+        $mail->send();
     }catch (Exception $e) {
         header("Location: dashboard.php?eventID=$eventID");
         exit();
