@@ -55,6 +55,7 @@ $matches = $conn->query($sql);
     <form method = "post" action = <?php echo "event-results.php?eventID=$eventID"; ?>>
         <div class="accordion" name="match-list" id=<?php echo $eventID?>>
             <?php
+                $matchCounter = 1;
                 while($match = $matches->fetch_assoc()){
                     $matchNo = $match["matchNo"];
                     $p1 = $match["player1"];
@@ -79,7 +80,7 @@ $matches = $conn->query($sql);
 
                     //p1 and p2 crash button ID's are swapped because they add points to the other person's score
                     $accordion = "<div class=\"accordion-item\">
-                                <h2 class=\"accordion-title\" id=\"M$matchNo\"> Match $matchNo: $p1 vs. $p2 (attacking $attackSide)</h2>
+                                <h2 class=\"accordion-title\" id=\"M$matchNo\"> Match $matchCounter: $p1 vs. $p2 (attacking $attackSide)</h2>
                                 <div class=\"match-menu\">
                                 <div class=\"player-label\">";
                     $accordion = $accordion . "<label class=\"p1Label\" for = \"M" . $matchNo . "P1Score\">". $p1 . "'s Score</label>
@@ -101,7 +102,7 @@ $matches = $conn->query($sql);
                     </div>
                     </div>";
                     echo $accordion;
-
+                    $matchCounter++;
 
                 }
             ?>
