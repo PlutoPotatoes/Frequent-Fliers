@@ -105,8 +105,8 @@
     $sql = "SELECT matchNo, player1, player2, attackSide from eventMatch where eventID=$eventID order by matchNo;";
     $result = $conn->query($sql);
    
-    
-      
+    //variable for tracking round numbers
+    $count = 1;  
     //format match information into an html table to be emailed
     $emailStr = '<table class="data-table" cellpadding="5" border="1" style= "border-collapse: collapse;"><tr class="data-heading">';
 
@@ -120,14 +120,7 @@
 
     //add all data to the table row by row
     while ($row = $result->fetch_assoc()) {
-        /*[Mon Apr 28 18:54:01 2025] PHP Warning:  Undefined array key -1 in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
-[Mon Apr 28 18:54:01 2025] PHP Warning:  Trying to access array offset on null in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
-[Mon Apr 28 18:54:01 2025] PHP Warning:  Undefined array key -1 in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 124
-[Mon Apr 28 18:54:01 2025] PHP Warning:  Trying to access array offset on null in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 124
-[Mon Apr 28 18:54:01 2025] PHP Warning:  Undefined array key -1 in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
-[Mon Apr 28 18:54:01 2025] PHP Warning:  Trying to access array offset on null in C:\Users\ryanm\Comp Sci Work\Practicum\Frequent-Fliers\frequent-fliers-html\create-bracket-email.php on line 123
-*/
-        
+        //skip round if it includes a Rest Round player id
         if($row["player2"] == -1 || $row["player1"] == -1){
             continue;
         }
@@ -143,13 +136,14 @@
         
 
         //add data to the html email string
-        $emailStr = $emailStr .'<td>' . $matchNo . '</td>'; //get items 
+        $emailStr = $emailStr .'<td>' . $count . '</td>'; //get items 
         $emailStr = $emailStr .'<td>' . $name1 . '</td>'; //get items 
         $emailStr = $emailStr .'<td>' . $name2 . '</td>'; //get items 
         $emailStr = $emailStr .'<td>' . $attackSide . '</td>'; //get items 
 
         //end row
         $emailStr = $emailStr .'</tr>';
+        $count++;
     }
     $emailStr = $emailStr . "</table>";
     $mail->isHTML(true);
