@@ -1,17 +1,10 @@
 <?php
 // Get the event ID from the query string
+include('database.php');
+
 $eventID = $_GET["eventID"];
 
-// DB connection
-$host = 'sql.cianci.io';
-$dbname = 'frequentfliers';
-$username = 'rmorrell';
-$password = 'e2VaSdfES6sU';
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = dbConn();
 
 // Query the player names for the table
 $sql = "SELECT playerName, userID FROM attendee WHERE eventID = $eventID;";

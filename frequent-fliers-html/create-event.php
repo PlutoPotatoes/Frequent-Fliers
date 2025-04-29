@@ -4,20 +4,8 @@ require "vendor/autoload.php";
 
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
-
-
-
-//connect to DB
-$host = 'sql.cianci.io';
-$dbname = 'frequentfliers';
-$username = 'rmorrell';
-$password = 'e2VaSdfES6sU';
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include('database.php');
+$conn = dbConn();
 
 //grab data from the form
 $event = $_POST["event-name"];

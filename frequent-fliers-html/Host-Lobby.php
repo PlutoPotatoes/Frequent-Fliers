@@ -8,15 +8,11 @@
 </head> <!--FIXME - add metadata?-->
 <?php
     //needs to be called as Lobby.php?eventID=###
-    $eventID = $_GET["eventID"];
-
-    //server connection details
-    $host = 'sql.cianci.io';
-    $dbname = 'frequentfliers';
-    $username = 'rmorrell';
-    $password = 'e2VaSdfES6sU';
-
-    $conn = new mysqli($host, $username, $password, $dbname);
+    include('database.php');    
+    $conn = dbConn();
+    
+    $eventID=$_GET["eventID"];
+    
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

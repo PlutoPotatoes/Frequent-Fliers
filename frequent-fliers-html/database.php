@@ -7,14 +7,20 @@
 
 
 //info is correct for Cianci's database but access is denied for my user
-$host = 'sql.cianci.io';
-$dbname = 'frequentfliers';
-$username = 'rmorrell';
-$password = 'e2VaSdfES6sU';
 
-$mysqli = new mysqli($host, $username, $password, $dbname);
 
-if ($mysqli->connect_errno){
-    die("Connection error: " . $mysqli->connect_errno);
+function dbConn(){
+    $host = 'sql.cianci.io';
+    $dbname = 'frequentfliers';
+    $username = 'rmorrell';
+    $password = 'e2VaSdfES6sU';
+
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
 }
+
 

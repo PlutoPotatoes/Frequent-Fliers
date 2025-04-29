@@ -1,5 +1,6 @@
 <?php
 
+    include('database.php');
     require "vendor/autoload.php";
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -18,19 +19,20 @@
 
     //grab eventID from the url (www.kitefightLA/something?eventID=##)
     $eventID = $_GET["eventID"];
-
+    $conn = dbConn();
 
     //server connection details
-    $host = 'sql.cianci.io';
-    $dbname = 'frequentfliers';
-    $username = 'rmorrell';
-    $password = 'e2VaSdfES6sU';
+    // $host = 'sql.cianci.io';
+    // $dbname = 'frequentfliers';
+    // $username = 'rmorrell';
+    // $password = 'e2VaSdfES6sU';
 
-    $conn = new mysqli($host, $username, $password, $dbname);
+    // $conn = new mysqli($host, $username, $password, $dbname);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    // if ($conn->connect_error) {
+    //     die("Connection failed: " . $conn->connect_error);
+    // }
+
     //clear database of any duplicates
     $sql = "DELETE FROM eventMatch WHERE eventID = $eventID;";
     $conn->query($sql);
