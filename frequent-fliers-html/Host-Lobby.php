@@ -7,6 +7,16 @@
 
 </head> <!--FIXME - add metadata?-->
 <?php
+    /*
+        This file contains the Host-Lobby. this includes:
+            1. a dynamic table that updates as players join the lobby
+                using a javascript interval to refresh getTable.php 
+            2. Kick buttons on the table to remove players from the lobby
+            3. a QR Code the directs new players to the signup page and
+                autofills the event pin
+
+        Last edited by Ryan Morrell 4/28/25
+    */
     //needs to be called as Lobby.php?eventID=###
     include('database.php');    
     $conn = dbConn();

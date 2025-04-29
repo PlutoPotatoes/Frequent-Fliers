@@ -1,4 +1,12 @@
 <?php
+
+/*
+    This file contains the script called when either scorekeeping button in dashboard.php
+    is pressed. eventID, matchID, player, and score must be passed in the URL.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
+
 include('database.php');    
 $conn = dbConn();
 

@@ -1,4 +1,11 @@
 <?php
+/*
+    This file contains the script that runs whenever a kick button
+    in Host-Lobby is pressed. eventID and UserID must be passed in 
+    the URL.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
 include('database.php');    
 $conn = dbConn();
 // Added (ints) to prevent SQL injection

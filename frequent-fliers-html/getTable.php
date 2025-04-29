@@ -1,4 +1,11 @@
 <?php
+/*
+    This file condenses the Host-Lobby table of all players into
+    a single file so the javascript can refresh the table on a timer. 
+    This keeps the table up to date as people join the lobby.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
 // Get the event ID from the query string
 include('database.php');
 

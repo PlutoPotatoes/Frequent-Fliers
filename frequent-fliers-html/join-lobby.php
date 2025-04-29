@@ -1,4 +1,10 @@
 <?php
+    /*
+        This file adds new players to the correct event in the database 
+        before redirecting to Guest-Lobby.php
+
+        Last edited by Ryan Morrell 4/28/25
+    */
     include('database.php');    
     $conn = dbConn();
     
@@ -21,4 +27,4 @@
     header("Location: Guest-Lobby.php?eventID=$eventID&playerID=$playerID");
     exit();
 
-?>
+?>  

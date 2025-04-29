@@ -1,5 +1,20 @@
 <?php
 
+/*
+    This file is an intermediary between the host-event.html form and the Host-Lobby.php lobby.
+    It creates the event in the database and then redirects to the lobby to prevent errors on 
+    lobby reload.
+    It works as follows
+    1. connect to database and create a new QRCode and PNGWriter from the endroid package
+        and generate a QRCode that points to the signup page with the correct eventID
+    2. store the QRCode PNG as a temporary file, insert it into the database, and delete the temp file
+    3. add the event host to the database as a player
+    4. redirect to Host-Lobby.php
+
+    Last edited by Ryan Morrell 4/28/25
+*/
+
+
 require "vendor/autoload.php";
 
 use Endroid\QrCode\QrCode;
@@ -45,13 +60,13 @@ $current_id = $statement->execute() or die("<b>Error:</b> Problem on Image Inser
 //Delete Temporary QRCode image in this directory
 unlink(__DIR__."/QRCodes/qrcode$eventID.png");
 
-//Retrieve the QR Code and echo
+//Retrieve the QR Code
 //can retrieve any QR code by replacing the eventID with a different event
 $sql = "SELECT img FROM QRCode WHERE eventID = $eventID;";
 $QRCode = $conn->query($sql);
 
-//echos the img embedding script in HTML
-echo '<img src="data:image/jpeg;base64,' . base64_encode($QRContent) . '" alt="Uploaded Image" style="max-width: 500px;">';
+//example echo used to call the QR Code
+//echo '<img src="data:image/jpeg;base64,' . base64_encode($QRContent) . '" alt="Uploaded Image" style="max-width: 500px;">';
 
 
 //add creator as player
