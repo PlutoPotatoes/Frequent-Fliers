@@ -6,20 +6,21 @@
     
 
 </head>
-<?php
- $eventID = $_GET["eventID"];
+<?php 
+/*
+    This file holds creates a dynamic table to hold the submitted results of a
+    completed event. The standings table is created by a series of php echo statements
+    that add a new row for each player found in the database. Scores are tallied with an
+    SQL Count query that selects all rounds won by each player
 
- //server connection details
- $host = 'sql.cianci.io';
- $dbname = 'frequentfliers';
- $username = 'rmorrell';
- $password = 'e2VaSdfES6sU';
+    Last edited by Ryan Morrell 4/28/25
+*/
+include('database.php');
 
- $conn = new mysqli($host, $username, $password, $dbname);
+$eventID = $_GET["eventID"];
 
- if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
- }
+
+$conn = dbConn();
  
 //add results to DB
 $sql = "SELECT matchNo, player1, player2, player1Score, player2Score FROM eventMatch where eventID=$eventID;";

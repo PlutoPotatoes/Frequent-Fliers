@@ -1,12 +1,15 @@
 <?php
 
-// change these values to the correct database data
-// Put these in a function we can include whereever needed??
-// return $mysqli/$conn
+/*
+    This file holds the database connection function:
+    1. change the host, database name, username, and password as needed
+    2. in any file that needs DB access call
+        include('database.php');
+        $conn = dbConn();
 
+    Last edited by Ryan Morrell 4/28/25
+*/
 
-
-//info is correct for Cianci's database but access is denied for my user
 
 
 function dbConn(){

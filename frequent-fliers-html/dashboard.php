@@ -9,6 +9,15 @@
 
 <?php
 
+/*
+    This fil holds the event dashboard. This is mostly basic HTML but each match generates an
+    accordion style menu to hold the scoring controls. This is done by looping over the same 
+    echo statement and replacing values with each row in the database. All menus are part of 
+    single form object that forwards the user to the results page when submitted.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
+
 include('database.php');
 
 $conn = dbConn();

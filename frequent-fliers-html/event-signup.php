@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="sign-up-styles.css">
 </head>
 <?php
+/*
+    This file holds the signup form that posts to join-lobby.php and adds guest players
+    to a lobby. Additionally, the form will autofill the event pin if the eventID variable
+    is set in the URL. This means that scanning a QRCode with a specific eventID will
+    autofill the pin for the user.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
     <div class="header-bar"></div>
-    <!-- WHY ARE YOU BLUE-->
         <a class="logo-block" href="index.html"><div class="lakf-logo">LAKF</div></a>
         <a href="help.html" class="help-button">?</a>
 
@@ -28,7 +35,7 @@
         </div>
     </div>
 
-    <!--updates HTML form to send data to nonAdminGetTable.php-->
+    <!--updates HTML form to send data to Guest-Lobby-Table.php-->
     
     <form action="join-lobby.php?eventID=" method="Post" class="event-form">
     <!-- Need to actually require this, causes errors when not filled out -->

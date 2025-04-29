@@ -7,10 +7,18 @@
 
 </head> <!--FIXME - add metadata?-->
 <?php
+/*
+    This file is nearly identical to Host-Lobby but it uses Guest-Lobby-Table.php
+    to generate a table without kick buttons. Additionally, the Leave Lobby button
+    uses the playerID passed through the URL to remove the correct player before 
+    redirecting to the homepage.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
     //needs to be called as Lobby.php?eventID=###
     include('database.php');    
     $conn = dbConn();
-    
+
     $eventID=$_GET["eventID"];
     $playerID = $_GET["playerID"];
     

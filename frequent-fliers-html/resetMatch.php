@@ -1,4 +1,12 @@
 <?php
+
+/*
+    This file contains the script called when the host presses
+    the reset match button in dashboard.php. eventID and matchID must be passed in the URL.
+
+    Last edited by Ryan Morrell 4/28/25
+*/
+
 include('database.php');    
 $conn = dbConn();
 
