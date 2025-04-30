@@ -5,6 +5,8 @@ CREATE TABLE kiteEvent(
 	playerCount TINYINT,
 	PRIMARY KEY (eventID)
 	); 
+
+ALTER TABLE kiteEvent AUTO_INCREMENT=10;
 	
 CREATE TABLE QRCode(
 	img BLOB NOT NULL,
