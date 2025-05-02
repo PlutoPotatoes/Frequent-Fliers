@@ -1,10 +1,15 @@
 <?php
-    /*
-        This file adds new players to the correct event in the database 
-        before redirecting to Guest-Lobby.php
+/*
 
-        Last edited by Ryan Morrell 4/28/25
-    */
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: join-lobby.php
+ *
+ * This file adds new players to the correct event in the database
+ * before redirecting them to guest_lobby.php.
+ */
+
     include('database.php');    
     $conn = dbConn();
     

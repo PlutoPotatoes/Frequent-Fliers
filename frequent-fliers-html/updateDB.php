@@ -1,11 +1,15 @@
 <?php
 
 /*
-    This file contains the script called when either scorekeeping button in dashboard.php
-    is pressed. eventID, matchID, player, and score must be passed in the URL.
-
-    Last edited by Ryan Morrell 4/28/25
-*/
+ * Last Edited By: Ryan Morrell
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: updateDB.php
+ *
+ * This file runs when either scorekeeping button in dashboard.php is pressed.
+ * It expects eventID, matchID, player, and score to be passed in the URL and
+ * updates the specified player's score in the database.
+ */
 
 include('database.php');    
 $conn = dbConn();

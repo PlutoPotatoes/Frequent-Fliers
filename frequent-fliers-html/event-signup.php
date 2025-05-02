@@ -8,13 +8,17 @@
 </head>
 <?php
 /*
-    This file holds the signup form that posts to join-lobby.php and adds guest players
-    to a lobby. Additionally, the form will autofill the event pin if the eventID variable
-    is set in the URL. This means that scanning a QRCode with a specific eventID will
-    autofill the pin for the user.
-
-    Last edited by Ryan Morrell 4/28/25
-*/
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: event-signup.php
+ *
+ * This file contains the signup form that posts to join-lobby.php
+ * to add guest players to a lobby. If the eventID variable is set
+ * in the URL, the form will autofill the event pin. This allows
+ * users who scan a QR code with a specific eventID to have the pin
+ * pre-filled automatically.
+ */
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
     <div class="header-bar"></div>

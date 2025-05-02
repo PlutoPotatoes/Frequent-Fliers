@@ -1,3 +1,15 @@
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: homescreen.css
+ *
+ * This CSS file styles the homepage of the Los Angeles Kite Fighting (LAKF) website.
+ * It defines the layout, typography, buttons, banner, and responsive design for 
+ * various screen sizes, ensuring a clean and engaging user interface.
+ */
+ 
+ 
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
 
 body, html {

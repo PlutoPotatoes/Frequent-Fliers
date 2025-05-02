@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: results.css
+ *
+ * This CSS file styles the dashboard and standings pages for the Los Angeles Kite Fighting (LAKF) website.
+ * It defines the layout and appearance of rankings tables, player standings, buttons, QR code sections,
+ * and general page elements to provide a clear and engaging visual presentation of event results.
+ */
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
 
 body{
     width: 100%; 

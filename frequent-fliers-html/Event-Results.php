@@ -7,14 +7,20 @@
 
 </head>
 <?php 
-/*
-    This file holds creates a dynamic table to hold the submitted results of a
-    completed event. The standings table is created by a series of php echo statements
-    that add a new row for each player found in the database. Scores are tallied with an
-    SQL Count query that selects all rounds won by each player
 
-    Last edited by Ryan Morrell 4/28/25
-*/
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: standings_table.php
+ *
+ * This file creates a dynamic table to display the submitted results
+ * of a completed event. The standings table is built using a series
+ * of PHP echo statements that add a new row for each player found
+ * in the database. Scores are tallied using an SQL COUNT query
+ * that selects all rounds won by each player.
+ */
+
 include('database.php');
 
 $eventID = $_GET["eventID"];

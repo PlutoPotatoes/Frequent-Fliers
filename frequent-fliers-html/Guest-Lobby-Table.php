@@ -1,12 +1,16 @@
 <?php
 /*
-    This file condenses the Guest-Lobby table of all players into
-    a single file so the javascript can refresh the table on a timer. 
-    This keeps the table up to date as people join the lobby. The
-    only difference from getTable.php is the lack of kick buttons.
+ * Last Edited By: Ryan Morrell
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: Guest_Lobby_Table.php
+ *
+ * This file condenses the Guest-Lobby table of all players into a single
+ * output so the JavaScript can refresh the table on a timer. This keeps
+ * the displayed lobby table up to date as new players join. The only
+ * difference from getTable.php is the lack of kick buttons.
+ */
 
-    Last edited by Ryan Morrell 4/28/25
-*/
 // Get the event ID from the query string
 include('database.php');
 

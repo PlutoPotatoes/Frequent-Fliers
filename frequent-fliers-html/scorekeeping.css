@@ -1,4 +1,15 @@
-.scorekeeping {
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: scorekeeping.css
+ *
+ * This CSS file styles the scorekeeping interface for the Los Angeles Kite Fighting (LAKF) website.
+ * It defines the layout, buttons, accordion menus, score displays, and responsive elements used
+ * for managing matches, updating scores, and providing an interactive experience during events.
+ */
+
+ .scorekeeping {
     background-color: #ffd6c0;
     display: flex;
     flex-direction: row;

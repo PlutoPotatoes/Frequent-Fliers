@@ -1,11 +1,18 @@
 <?php
 
 /*
-    This file retrives the correct QRCode for easy use in Lobbies.
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: getQR.php
+ *
+ * This file retrieves the correct QR code for easy use in lobbies.
+ * Called using:
+ *     <img src="getQR.php?eventID=###">
+ * It queries the database for the QR code image associated with the
+ * provided eventID and returns the image.
+ */
 
-    Last edited by Ryan Morrell 4/28/25
-*/
-//<img src="getQR.php?eventID=###" > will call this and get the qr code for the event number ###
 include('database.php');
 
 $eventID = $_GET["eventID"];

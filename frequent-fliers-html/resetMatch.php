@@ -1,11 +1,15 @@
 <?php
 
 /*
-    This file contains the script called when the host presses
-    the reset match button in dashboard.php. eventID and matchID must be passed in the URL.
-
-    Last edited by Ryan Morrell 4/28/25
-*/
+ * Last Edited By: Ryan Morrell
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: reset_match.php
+ *
+ * This file runs when the host presses the reset match button in dashboard.php.
+ * It expects eventID and matchID to be passed in the URL and resets the scores
+ * of the specified match in the database.
+ */
 
 include('database.php');    
 $conn = dbConn();

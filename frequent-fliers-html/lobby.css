@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+/*
+ * Last Edited By: Mellisa Dodson
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: lobby.css
+ *
+ * This CSS file styles the Host and Guest Lobby pages for the Los Angeles Kite Fighting (LAKF) website.
+ * It defines the layout, colors, fonts, buttons, QR code containers, player tables, and responsive design,
+ * ensuring a consistent and interactive user experience across the lobby pages.
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
 
 body{
     width: 100%; 
@@ -17,7 +28,6 @@ body{
     border: 5px black solid;
     text-align: center;
   }
-  
   
 .qrcode{
     object-fit:cover; 
@@ -149,7 +159,7 @@ button:hover {
   color:#EC368D;
 }
 
-  .event-title{
+.event-title{
     color: #EC368D; 
     font-size: 36px; 
     font-family: Inter; 
@@ -159,7 +169,7 @@ button:hover {
     text-align: center;
   }
 
-  .pin-box{
+.pin-box{
     display: flex;
     justify-content: flex-start;
     align-items: center;

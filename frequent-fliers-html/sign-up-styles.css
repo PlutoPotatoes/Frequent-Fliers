@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+/*
+ * Last Edited By: Mellisa Dodson
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: sign-up-styles.css
+ *
+ * This CSS file styles the event creation form and related components
+ * for the Los Angeles Kite Fighting (LAKF) website. It defines the
+ * layout, buttons, input fields, and responsive behavior to ensure a
+ * user-friendly and visually cohesive experience across devices.
+ */
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
 
 body, html {
     margin: 0;

@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: host_an_event.css
+ *
+ * This CSS file styles the event form and homepage for the Los Angeles Kite Fighting (LAKF) website.
+ * It defines layout, typography, buttons, banners, form elements, and responsive behavior across devices,
+ * ensuring a cohesive and user-friendly visual design.
+ */
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
 
 body, html {
     margin: 0;
@@ -7,8 +18,6 @@ body, html {
     text-align: center;
     background-color: #FFD6C0;
 }
-
-
 
 h1 {
     font-family: 'Faster One', cursive;
@@ -181,6 +190,7 @@ button:hover {
         padding: 10px 20px;
     }
 }
+
 .help-button {
 
     position: fixed;

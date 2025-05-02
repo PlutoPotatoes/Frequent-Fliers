@@ -1,11 +1,15 @@
 <?php
 /*
-    This file contains the script that runs whenever a kick button
-    in Host-Lobby is pressed. eventID and UserID must be passed in 
-    the URL.
+ * Last Edited By: Ryan Morrell
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: kickPlayer.php
+ *
+ * This file runs whenever a kick button in the Host-Lobby is pressed.
+ * It expects eventID and userID to be passed in the URL and removes
+ * the specified player from the attendee table in the database.
+ */
 
-    Last edited by Ryan Morrell 4/28/25
-*/
 include('database.php');    
 $conn = dbConn();
 // Added (ints) to prevent SQL injection
