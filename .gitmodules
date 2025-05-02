@@ -1,6 +1,1 @@
-[submodule "frequent-fliers-html\vendor\phpmailer"]
-	path = php-work/php-work/vendor/phpmailer/phpmailer
-	url = https://github.com/PHPMailer/PHPMailer
-[submodule "frequent-fliers-html/vendor/bacon/bacon-qr-code"]
-	path = frequent-fliers-html/frequent-fliers-html/vendor/bacon/bacon-qr-code
-	url = https://github.com/Bacon/BaconQrCode.git
+
