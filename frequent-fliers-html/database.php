@@ -1,16 +1,17 @@
 <?php
 
 /*
-    This file holds the database connection function:
-    1. change the host, database name, username, and password as needed
-    2. in any file that needs DB access call
-        include('database.php');
-        $conn = dbConn();
-
-    Last edited by Ryan Morrell 4/28/25
-*/
-
-
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: database.php
+ *
+ * This file holds the database connection function.
+ * Change the host, database name, username, and password as needed.
+ * In any file that needs DB access, include this file:
+ *     include('database.php');
+ *     $conn = dbConn();
+ */
 
 function dbConn(){
     $host = 'sql.cianci.io';
