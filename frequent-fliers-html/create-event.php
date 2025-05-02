@@ -57,8 +57,7 @@ $statement = $conn -> prepare($sql);
 $statement->bind_param('s', $QRContent);
 $current_id = $statement->execute() or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_connect_error());
 
-//Delete Temporary QRCode image in this directory
-unlink(__DIR__."/QRCodes/qrcode$eventID.png");
+
 
 //Retrieve the QR Code
 //can retrieve any QR code by replacing the eventID with a different event
@@ -72,6 +71,9 @@ $QRCode = $conn->query($sql);
 //add creator as player
 $sql = "INSERT INTO attendee (playerName, email, eventID) 
 VALUES (\"$name\", \"$email\", $eventID);";
+
+//Delete Temporary QRCode image in this directory
+unlink(__DIR__."/QRCodes/qrcode$eventID.png");
 
 if ($conn->query($sql) === TRUE) {
     header("Location: http://localhost:8000/Host-Lobby.php?eventID=$eventID"); //FIXME CHANGE THIS TO NEW EVENT LOBBY
