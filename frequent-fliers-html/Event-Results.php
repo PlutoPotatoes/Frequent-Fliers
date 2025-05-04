@@ -42,6 +42,8 @@ $standings = [];
 $sql = "SELECT userID, playerName FROM attendee WHERE eventID=$eventID;";
 $players = $conn->query($sql);
 
+// create json
+
 ?>
 <body>
     <div class="header-bar">
