@@ -105,7 +105,7 @@
     <script type="module" src="lobby.js"></script>
 
     <div class="social-media-bar">
-        <p>Insert social media stuff</p>
+        
     </div>
 
 </body>
