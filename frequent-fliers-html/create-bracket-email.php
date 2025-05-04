@@ -1,19 +1,24 @@
     <?php
     /*
-        This file is called when a lobby starts. 
-        It will create round robin tournament where each player plays every other player once.
-        Functionality is as follows
-        1. create and configure a new PHPMailer object
-        2. connect to DB and get eventID from the url
-        3. run MySQL commands to get attendees, create matchups, 
-            and create an entry for each match in the eventMatches table.
-            (automatically includes placeholders for odd numbered events)
-        4. get all attendee emails from the database
-        5. configure an HTML table displaying the match order
-        6. send an email to all attendees with said table
+ * Last Edited By: Ryan Morrell
+ * Date: May 3rd, 2025
+ * File: create-bracket-email.php
+ *
+ * This file is called when a lobby starts.
+ * It creates a round-robin tournament where each player plays every other player once.
+ * 
+ * Functionality:
+ * 1. Creates and configures a new PHPMailer object.
+ * 2. Connects to the database and retrieves the eventID from the URL.
+ * 3. Runs MySQL commands to:
+ *    - Retrieve attendees.
+ *    - Create matchups (including placeholders if the number of players is odd).
+ *    - Insert each matchup into the eventMatches table.
+ * 4. Retrieves all attendee emails from the database.
+ * 5. Builds an HTML table displaying the match schedule.
+ * 6. Sends an email with the match table to all attendees.
+ */
 
-        Last edited by Ryan Morrell 4/28/25
-    */
     
     include('database.php');
     require "vendor/autoload.php";

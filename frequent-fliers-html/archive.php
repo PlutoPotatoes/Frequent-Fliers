@@ -1,9 +1,12 @@
 <?php
 /*
-    This file holds the archive page that displays previously completed tournaments.
+ * Last Edited By: Jake Moore
+ * Date: May 3rd, 2025
+ * File: archive.php
+ *
+ * This file holds the archive page that displays previously completed tournaments.
+ */
 
-    created by Jake 4/29/25
-*/
 // Database credentials
 include('database.php');
 $conn = dbConn();

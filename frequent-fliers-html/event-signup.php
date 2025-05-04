@@ -8,7 +8,7 @@
 </head>
 <?php
 /*
- * Last Edited By: Cael McDermott
+ * Last Edited By: Ryan Morrell
  * Date: May 2nd, 2025
  * Course: CS 367 - Practicum
  * File: event-signup.php

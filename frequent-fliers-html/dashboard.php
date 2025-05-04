@@ -10,13 +10,16 @@
 <?php
 
 /*
-    This fil holds the event dashboard. This is mostly basic HTML but each match generates an
-    accordion style menu to hold the scoring controls. This is done by looping over the same 
-    echo statement and replacing values with each row in the database. All menus are part of 
-    single form object that forwards the user to the results page when submitted.
-
-    Last edited by Ryan Morrell 4/28/25
-*/
+ * Last Edited By: Ryan Morrell
+ * Date: May 3rd, 2025
+ * File: dashboard.php
+ *
+ * This file holds the event dashboard. It is mostly basic HTML, but each match 
+ * generates an accordion-style menu containing the scoring controls. This is done 
+ * by looping over the same echo statement and replacing values with each row 
+ * from the database. All menus are part of a single form object that forwards 
+ * the user to the results page upon submission.
+ */
 
 include('database.php');
 

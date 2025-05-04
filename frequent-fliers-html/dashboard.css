@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 2nd, 2025
+ * Course: CS 367 - Practicum
+ * File: dashboard.css
+ *
+ * This CSS file styles the event dashboard page of the Los Angeles Kite Fighting (LAKF) website.
+ * It defines the layout, accordion menus, scoring controls, buttons, and responsive design 
+ * to ensure a clear and interactive user interface for managing live kite fighting events.
+ */
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Inter:wght@400;700&display=swap');
 *{
   margin:0;
   padding:0;

@@ -1,3 +1,20 @@
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 3, 2025
+ * File: app.js
+ *
+ * Description:
+ * This JavaScript file controls the interactive functionality of the event dashboard.
+ * It manages the accordion menus for each match, score increment/decrement buttons,
+ * and reset buttons to update or reset scores via AJAX requests to the backend.
+ *
+ * Main Features:
+ * 1. Accordion toggle for showing/hiding match details.
+ * 2. Increment buttons (".touch-button") to increase player scores (up to 3).
+ * 3. Decrement buttons (".crash-button") to set player scores directly to 3.
+ * 4. Reset buttons (".reset-button") to reset match scores to zero.
+ * 5. AJAX POST requests to update the backend database via PHP scripts.
+ */
 
 //creates an array of all "accordion-title" elements
 const accordionTitles = document.querySelectorAll(".accordion-title");

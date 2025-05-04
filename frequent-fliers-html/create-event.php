@@ -1,18 +1,20 @@
 <?php
 
 /*
-    This file is an intermediary between the host-event.html form and the Host-Lobby.php lobby.
-    It creates the event in the database and then redirects to the lobby to prevent errors on 
-    lobby reload.
-    It works as follows
-    1. connect to database and create a new QRCode and PNGWriter from the endroid package
-        and generate a QRCode that points to the signup page with the correct eventID
-    2. store the QRCode PNG as a temporary file, insert it into the database, and delete the temp file
-    3. add the event host to the database as a player
-    4. redirect to Host-Lobby.php
+ * Last Edited By: Cael McDermott
+ * Date: May 3rd, 2025
+ * Course: CS 367 - Practicum
+ * File: create-event.php
+ *
+ * This PHP file serves as an intermediary between the host-event.html form and the Host-Lobby.php page.
+ * It performs the following:
+ * 1. Connects to the database, creates a new QRCode and PNGWriter (using the Endroid package),
+ *    and generates a QRCode linking to the signup page with the correct eventID.
+ * 2. Stores the generated QRCode PNG as a temporary file, inserts it into the database, and deletes the temp file.
+ * 3. Adds the event host to the database as a player.
+ * 4. Redirects to Host-Lobby.php to display the event lobby.
+ */
 
-    Last edited by Ryan Morrell 4/28/25
-*/
 
 
 require "vendor/autoload.php";

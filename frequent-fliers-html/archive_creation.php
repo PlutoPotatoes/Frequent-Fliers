@@ -1,5 +1,22 @@
 <?php
-include('database.php');
+/*
+ * Last Edited By: Cael McDermott
+ * Date: May 3rd, 2025
+ * File: archive_creation.php
+ *
+ * Description:
+ * This script retrieves all match data grouped by event from the database,
+ * formats it into JSON, and stores it in the matchArchive table.
+ *
+ * Steps:
+ * 1. Connect to the database.
+ * 2. Query match data (with event and player details) grouped by eventID.
+ * 3. Format matches per event into JSON.
+ * 4. Insert or update the JSON data in the matchArchive table.
+ * 5. Close the connection and confirm success.
+ */
+
+ include('database.php');
 $conn = dbConn();
 
 // Query to fetch match data along with event details
