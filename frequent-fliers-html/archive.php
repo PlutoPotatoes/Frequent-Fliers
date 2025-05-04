@@ -54,7 +54,7 @@ $result = $conn->query($sql);
 </head>
 <body>
     <div class="header-bar"></div>
-    <div class="lakf-logo">LAKF</div>
+    <a href= "index.html"><div class="lakf-logo">LAKF</div></a>
 
     <img class="banner" src="cloudBanner.jpg" alt="Cloud Banner">
 
