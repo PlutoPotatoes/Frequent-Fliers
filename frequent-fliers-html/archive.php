@@ -86,7 +86,7 @@ $result = $conn->query($sql);
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#<?php echo $collapseID; ?>" aria-expanded="false"
                                     aria-controls="<?php echo $collapseID; ?>">
-                                <?php echo "Event ID: $eventID – $eventName"; ?>
+                                <?php echo "$eventName"; ?>
                             </button>
                         </h2>
                         <div id="<?php echo $collapseID; ?>" class="accordion-collapse collapse"
