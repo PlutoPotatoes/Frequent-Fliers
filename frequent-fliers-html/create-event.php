@@ -78,7 +78,7 @@ VALUES (\"$name\", \"$email\", $eventID);";
 unlink(__DIR__."/QRCodes/qrcode$eventID.png");
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: http://localhost:8000/Host-Lobby.php?eventID=$eventID"); //FIXME CHANGE THIS TO NEW EVENT LOBBY
+    header("Location: Host-Lobby.php?eventID=$eventID"); //FIXME CHANGE THIS TO NEW EVENT LOBBY
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
