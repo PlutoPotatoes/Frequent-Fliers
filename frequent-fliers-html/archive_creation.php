@@ -1,23 +1,23 @@
 <?php
 /*
- * Last Edited By: Cael McDermott
+ * Last Edited By: Jake Moore
  * Date: May 3rd, 2025
- * File: archive_creation.php
+ * File: archive.php
  *
- * Description:
- * This script retrieves all match data grouped by event from the database,
- * formats it into JSON, and stores it in the matchArchive table.
- *
- * Steps:
- * 1. Connect to the database.
- * 2. Query match data (with event and player details) grouped by eventID.
- * 3. Format matches per event into JSON.
- * 4. Insert or update the JSON data in the matchArchive table.
- * 5. Close the connection and confirm success.
+ * This file holds the archive page that displays previously completed tournaments.
  */
 
- include('database.php');
-$conn = dbConn();
+// Database credentials
+$host = 'sql.cianci.io';
+$dbname = 'frequentfliers';
+$username = 'rmorrell';
+$password = 'e2VaSdfES6sU';
+
+// Establish database connection
+$conn = new mysqli($host, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Query to fetch match data along with event details
 $sql = "
@@ -71,4 +71,6 @@ $insertStmt->close();
 $conn->close();
 
 echo "Match archive stored successfully.";
+header("Location: archive.php");
+exit();
 ?>

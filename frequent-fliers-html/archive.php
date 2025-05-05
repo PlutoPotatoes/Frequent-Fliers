@@ -43,12 +43,18 @@ $result = $conn->query($sql);
 
     <h1>Event Archive</h1>
     <div class="button-bar">
-        <div class="button-container">
-            <a href="index.html">
-                <button class="home-button" style="border-radius: 12px;">Home</button>
-            </a>
+    <div class="button-container">
+        <a href="index.html">
+            <button class="home-button" style="border-radius: 12px;">Home</button>
+        </a>
+    </div>
+    <div class="button-container">
+        <form method="post" action="archive_creation.php">
+            <button class="home-button" type="submit" style="border-radius: 12px;">Update Archive</button>
+        </form>
         </div>
     </div>
+
 
     <div class="container my-5">
         <div class="accordion" id="eventAccordion">
