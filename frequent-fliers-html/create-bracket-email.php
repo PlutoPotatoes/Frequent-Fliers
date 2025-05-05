@@ -86,8 +86,6 @@
             $p1 = $userIDs[$n-1-$j];
             $p2 = $userIDs[$j];
 
-            echo $p1 . " " . $p1 . "<br>";  
-
             $attackSide;
             if(rand(0,1)==1){
                 $attackSide = 'top';
