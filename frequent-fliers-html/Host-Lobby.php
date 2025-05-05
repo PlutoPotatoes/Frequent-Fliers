@@ -85,10 +85,11 @@
         
 
         <script>
+        var count = 0;
         $(document).ready(function(){
         $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
         setInterval(function(){
-            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
+            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>&count='.count);
         }, 1000);
         });
         </script>  
