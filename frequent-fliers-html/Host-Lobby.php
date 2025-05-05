@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="lobby.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
 </head> <!--FIXME - add metadata?-->
 <?php
 /*
