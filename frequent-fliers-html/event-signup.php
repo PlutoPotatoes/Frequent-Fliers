@@ -22,11 +22,12 @@
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
     <div class="header-bar"></div>
-        <a class="logo-block" href="index.html"><div class="lakf-logo">LAKF</div></a>
+        <a href="index.html"><div class="lakf-logo">LAKF</div></a>
         <a href="help.html" class="help-button">?</a>
 
     <img class="banner" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
-    <h1>Sign Up<br/>To Fly!</h1>
+    
+        <h1>Sign Up<br/>To Fly!</h1>
 
     <div class="button-bar">
         <div class="button-container">
