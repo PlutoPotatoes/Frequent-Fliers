@@ -89,7 +89,7 @@
         $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
         setInterval(function(){
             $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
-        }, 500);
+        }, 1000);
         });
         </script>  
 
