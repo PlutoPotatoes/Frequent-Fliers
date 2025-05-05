@@ -43,7 +43,8 @@ if ($conn->query($sql) === TRUE) {
 
 
 //create QR code using new eventID
-$qrCode = new QrCode("http://localhost:8000/event-signup.php?eventID=$eventID");
+//FIXME: CHANGE THIS WHENEVER YOU CHANGE HOSTING SITES TO POINT TO THE RIGHT LINK
+$qrCode = new QrCode("ff.cianci.io/event-signup.php?eventID=$eventID"); 
 $writer = new PngWriter();
 
 //save the QRCode Momentarily 
