@@ -102,10 +102,10 @@
     <div class="start-holder">
         <a href="create-bracket-email.php?eventID=<?=$eventID?>"><button class="start-button">Start Tournament</button></a>
     </div>
-    <script type="module" src="lobby.js"></script>
+    <script type="module" src="ff.cianci.io/lobby.js"></script>
 
     <div class="social-media-bar">
-        
+
     </div>
 
 </body>
