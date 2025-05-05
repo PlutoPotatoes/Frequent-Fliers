@@ -168,7 +168,7 @@
         header("Location: dashboard.php?eventID=$eventID");
         exit();
     }
-
+    echo "got to bot";
     header("Location: dashboard.php?eventID=$eventID");
     exit();
 
