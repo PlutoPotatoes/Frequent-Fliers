@@ -91,11 +91,12 @@ h1 {
 }
 
 .button-bar {
-  position: relative;
-  top: -20px; /* Ensures the bar appears just below the image */
-  background-color: #FFA5A5;
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;  
   width: 100%;
+  background-color: #FFA5A5;
+  padding: 10px 0;
 }
 
 .button-container {

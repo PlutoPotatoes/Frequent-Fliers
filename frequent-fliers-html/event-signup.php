@@ -39,9 +39,6 @@
             </a>
         </div>
     </div>
-
-    <!--updates HTML form to send data to Guest-Lobby-Table.php-->
-    
     <form action="join-lobby.php?eventID=" method="Post" class="event-form">
     <!-- Need to actually require this, causes errors when not filled out -->
         <div class="form-group">
