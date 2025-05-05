@@ -19,6 +19,7 @@
  include('database.php');
 $conn = dbConn();
 
+function archive($conn){
 // Query to fetch match data along with event details
 $sql = "
 SELECT em.eventID, ke.eventName, em.matchNo, a1.playerName AS player1_name, a2.playerName AS player2_name, 
@@ -68,7 +69,4 @@ foreach ($events as $eventID => $event) {
 }
 
 $insertStmt->close();
-$conn->close();
-
-echo "Match archive stored successfully.";
-?>
+}
