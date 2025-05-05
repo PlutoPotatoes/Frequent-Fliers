@@ -95,6 +95,7 @@
         setInterval(function(){
             $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>&counter='+count);
             console.log('getTable.php?eventID=<?php echo $eventID?>&counter='+count);
+            count++;
         }, 1000);
         });
         </script>  
