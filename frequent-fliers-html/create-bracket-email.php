@@ -1,4 +1,4 @@
-    <?php
+<?php
     /*
  * Last Edited By: Ryan Morrell
  * Date: May 3rd, 2025
