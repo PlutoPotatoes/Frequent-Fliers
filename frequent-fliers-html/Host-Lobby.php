@@ -93,7 +93,7 @@
         $(document).ready(function(){
         $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
         setInterval(function(){
-            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
+            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>&counter='+count);
         }, 1000);
         });
         </script>  
