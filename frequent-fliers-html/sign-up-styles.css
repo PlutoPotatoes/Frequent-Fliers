@@ -69,19 +69,20 @@ h2, p {
 }
 
 .button-bar {
-    position: relative;
-    top: -20px; /* Ensures the bar appears just below the image */
+    display: flex;
+    justify-content: center;
+    align-content: center;  
+    width: 100%;
     background-color: #FFA5A5;
     padding: 10px 0;
-    width: 100%;
 }
 
 
 .button-container {
     display: flex;
     justify-content: center;
+    align-content: center;
     gap: 20px;
-    margin-top: 20px;
     flex-wrap: wrap;
 }
 
