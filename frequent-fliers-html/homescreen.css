@@ -154,6 +154,7 @@ button:hover {
 }
 
 .small-image {
+    width:90%;
     max-width: 900px;  
     height: auto;      
     display: block;    
