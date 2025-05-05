@@ -83,7 +83,7 @@
             $('#table-holder').load('Guest-Lobby-Table.php?eventID=<?php echo $eventID?>');
             setInterval(function(){
                 $('#table-holder').load('Guest-Lobby-Table.php?eventID=<?php echo $eventID?>');
-            }, 5000);
+            }, 1000);
             });
             </script>  
     </div>
