@@ -46,4 +46,5 @@ while ($row = $result->fetch_assoc()) {
 echo "</tbody></table></div>";
 //FIXME testing
 $conn->close();
+exit();
 ?>

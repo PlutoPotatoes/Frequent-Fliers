@@ -15,7 +15,7 @@
 
 //need to get kickButtons every few seconds instead of just at the start, list in static
 //either set an interval or include this in the getTable.php script
-const interval = setInterval(getButtons, 500);
+const interval = setInterval(getButtons, 501);
 let kickButtons = document.querySelectorAll(".kick-button");
 const eventID = document.querySelector(".table-spacer").id
 

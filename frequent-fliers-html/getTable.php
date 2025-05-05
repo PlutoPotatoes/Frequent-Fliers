@@ -33,12 +33,12 @@ echo "<div class=\"lobby-table\"><table><thead><tr><th></th><th class=\"lobby-na
 while ($row = $result->fetch_assoc()) {
     $name = $row["playerName"];
     $userID= $row["userID"];
-
+    
     echo "<tr><td><button class=\"kick-button\" id=\"$userID\">👟</button></td><td class=\"flier-name\">$name</td></tr>";
 
 }
 
 echo "</tbody></table></div>";
-//FIXME testing
 $conn->close();
+exit();
 ?>

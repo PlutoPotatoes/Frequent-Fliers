@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="lobby.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
 </head> <!--FIXME - add metadata?-->
 <?php
 /*
@@ -85,11 +89,14 @@
         
 
         <script>
+        var count = 0;
         $(document).ready(function(){
         $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
         setInterval(function(){
-            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>');
-        }, 500);
+            $('#table-holder').load('getTable.php?eventID=<?php echo $eventID?>&counter='+count);
+            console.log('getTable.php?eventID=<?php echo $eventID?>&counter='+count);
+            count++;
+        }, 1000);
         });
         </script>  
 
@@ -105,7 +112,7 @@
     <script type="module" src="lobby.js"></script>
 
     <div class="social-media-bar">
-        
+
     </div>
 
 </body>
