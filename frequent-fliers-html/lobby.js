@@ -26,7 +26,7 @@ function getButtons(){
         const id = button.id;
         button.addEventListener("click", () =>{
           
-          const php = "kickPlayer.php?eventID=" + eventID + "&userID="+ id;
+          const php = "ff.cianci.io/kickPlayer.php?eventID=" + eventID + "&userID="+ id;
           console.log(php);
           const xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
