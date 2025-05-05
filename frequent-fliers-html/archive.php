@@ -34,23 +34,6 @@ $result = $conn->query($sql);
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="archive.css">
-    <style>
-        /* Additional styling for the accordion */
-        .accordion-button {
-            background-color: #f8f9fa;
-            color: #000;
-        }
-        .accordion-button:not(.collapsed) {
-            background-color: #e9ecef;
-            color: #000;
-        }
-        .accordion-body {
-            background-color: #fff;
-        }
-        .table {
-            margin-bottom: 0;
-        }
-    </style>
 </head>
 <body>
     <div class="header-bar"></div>
