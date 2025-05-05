@@ -42,7 +42,7 @@ $standings = [];
 $sql = "SELECT userID, playerName FROM attendee WHERE eventID=$eventID;";
 $players = $conn->query($sql);
 
-// create json
+include('archive_creation.php');
 
 ?>
 <body>
