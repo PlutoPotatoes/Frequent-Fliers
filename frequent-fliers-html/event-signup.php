@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Angeles Kite Fighting</title>
-    <link rel="stylesheet" href="sign-up-styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Los Angeles Kite Fighting</title>
+        <link rel="stylesheet" href="sign-up-styles.css">
+    </head>
 <?php
 /*
  * Last Edited By: Ryan Morrell
@@ -21,13 +21,14 @@
  */
     $eventID = isset($_GET["eventID"])?$_GET["eventID"]:"";
 ?>
+<body>
     <div class="header-bar"></div>
         <a href="index.html"><div class="lakf-logo">LAKF</div></a>
         <a href="help.html" class="help-button">?</a>
 
     <img class="banner" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
     
-        <h1>Sign Up<br/>To Fly!</h1>
+    <h1>Sign Up<br/>To Fly!</h1>
 
     <div class="button-bar">
         <div class="button-container">
@@ -67,5 +68,7 @@
             <input type="submit" class="form-button" value="Join Event">
         </div>
     </form>
-      
-    </html>
+    
+</body>
+
+</html>

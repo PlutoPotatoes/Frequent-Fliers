@@ -1,6 +1,6 @@
 /*
  * Last Edited By: Melissa Dodson
- * Date: May 2nd, 2025
+ * Date: May 5th, 2025
  * Course: CS 367 - Practicum
  * File: sign-up-styles.css
  *
@@ -77,7 +77,6 @@ h2, p {
     height: fit-content;
     background-color: #FFA5A5;
 }
-
 
 .button-container {
     display: flex;
