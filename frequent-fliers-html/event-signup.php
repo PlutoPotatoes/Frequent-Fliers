@@ -23,12 +23,13 @@
 ?>
 <body>
     <div class="header-bar"></div>
-        <a href="index.html"><div class="lakf-logo">LAKF</div></a>
-        <a href="help.html" class="help-button">?</a>
+    <a href="index.html"><div class="lakf-logo">LAKF</div></a>
+    <a href="help.html" class="help-button">?</a>
 
-    <img class="banner" src="cloudBanner.jpg" alt="Cloud Banner"/> <!-- Local path should work once hosted or in same folder -->
-    
-    <h1>Sign Up<br/>To Fly!</h1>
+    <div class="hero">
+        <img class="banner" src="cloudBanner.jpg" alt="Cloud Banner"/>
+        <h1>Sign Up<br/>To Fly!</h1>
+    </div>
 
     <div class="button-bar">
         <div class="button-container">
@@ -40,6 +41,7 @@
             </a>
         </div>
     </div>
+
     <form action="join-lobby.php?eventID=" method="Post" class="event-form">
     <!-- Need to actually require this, causes errors when not filled out -->
         <div class="form-group">
