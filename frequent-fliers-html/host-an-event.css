@@ -41,6 +41,7 @@ h1 {
     height: 70%;
     object-fit: cover;
     display: block;
+    margin: 0px;
 }
 
 h1 {
