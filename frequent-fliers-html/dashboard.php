@@ -64,7 +64,7 @@ $matches = $conn->query($sql);
     </div>
 
 
-    <form method = "post" action = <?php echo "event-results.php?eventID=$eventID"; ?>>
+    <form method = "post" action = <?php echo "Event-Results.php?eventID=$eventID"; ?>>
         <div class="accordion" name="match-list" id=<?php echo $eventID?>>
             <?php
                 $matchCounter = 1;
