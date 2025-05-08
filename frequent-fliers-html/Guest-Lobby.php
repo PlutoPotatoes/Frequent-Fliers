@@ -60,7 +60,7 @@
     </div>
     <div class="event-title-box">
         <p class="event-title"><?php echo $eventName; ?></p>
-        <p class="instructions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌟 Ready to play? Scan the QR code to join the lobby! 🪁✨
+        <p class="instructions">🌟 Ready to play? Scan the QR code to join the lobby! 🪁✨
         <p>
     </div>
     <div class="pin-box">
