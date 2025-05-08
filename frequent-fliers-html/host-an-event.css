@@ -1,6 +1,6 @@
 /*
- * Last Edited By: Cael McDermott
- * Date: May 2nd, 2025
+ * Last Edited By: Melissa Dodson
+ * Date: May 5th, 2025
  * Course: CS 367 - Practicum
  * File: host_an_event.css
  *
@@ -14,7 +14,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     background-color: #FFD6C0;
 }
@@ -36,12 +36,17 @@ h1 {
     z-index: 10;
   }
 
+.hero {
+    position: relative;
+    width: 100%;
+}
+
 .img {
     width: 100%;
-    height: 70vh;  /* Adjusted to take less space */
+    height: 70%;
     object-fit: cover;
-    position: relative;
-    z-index: 1;
+    display: block;
+    margin: 0px;
 }
 
 h1 {
@@ -56,18 +61,19 @@ h1 {
 }
 
 .button-bar {
-    position: relative;
-    top: -20px; /* Ensures the bar appears just below the image */
-    background-color: #FFA5A5;
-    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;  
     width: 100%;
+    background-color: #FFA5A5;
+    padding: 10px 0;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
+    align-content: center;
     gap: 20px;
-    margin-top: 20px;
     flex-wrap: wrap;
 }
 
@@ -179,10 +185,6 @@ button:hover {
     .form-button {
         width: 100%;
         max-width: 200px;
-    }
-
-    .event-form {
-        margin-top: 60vh;
     }
 
     .home-button {
